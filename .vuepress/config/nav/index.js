@@ -125,8 +125,8 @@ module.exports = {
     }, */
     // { text: '常见问题', link: '/views/other/question', icon: 'reco-faq' },
     { text: '博客', link: '/categories/blog/', icon: 'reco-blog' },
-    { text: '案例', link: '/views/other/theme-example.html', icon: 'reco-category' },
-    { text: '关于我们', link: '/views/other/theme-example.html', icon: 'reco-category' },
+    // { text: '案例', link: '/views/other/theme-example.html', icon: 'reco-category' },
+    // { text: '关于我们', link: '', icon: 'reco-category' },
     // { text: '订阅', link: 'https://vuepress-theme-reco.recoluan.com/rss.xml', icon: 'reco-rss' },
     // { text: '留言板', link: '/views/other/messageBoard.html', icon: 'reco-suggestion' },
     // { text: 'GitHub', link: 'https://github.com/vuepress-reco/vuepress-theme-reco', icon: 'reco-github' }
