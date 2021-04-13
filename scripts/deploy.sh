@@ -1,12 +1,11 @@
+# 生成静态文件
 npm run build
 
-cd public
+cd docs/
 
-git init
+echo "webgpu.info" > CNAME
+
 git add -A
-git commit -m 'deploy'
+git commit -m "deploy"
 
-git push -f git@gitee.com:monk_wulv/bitcode.git master
-
-cd ../
-rm -rf public
+git push -f git@github.com:<3D-for-Fun>/<3D-for-Fun>.github.io.git main
