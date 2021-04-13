@@ -5,7 +5,7 @@ author: 'ue001'
 lang: 'zh-CN'
 sidebar: 'auto'
 categories:
- - blog
+ - Blog
  - Cesium
 ---
 

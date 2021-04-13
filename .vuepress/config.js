@@ -7,8 +7,8 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
-    ['meta', { name: 'author', content: 'jeff.fu' }],
-    ['meta', { name: 'keywords', content: 'vuepress,reco,jeff.fu,vuepress-reco,vuepress-theme-reco,theme,blog,主题' }],
+    ['meta', { name: 'author', content: '3D-for-Fun' }],
+    ['meta', { name: 'keywords', content: 'vuepress,reco,ue***,vuepress-reco,vuepress-theme-reco,theme,blog,主题' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#42b983' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
@@ -23,7 +23,7 @@ module.exports = {
   locales: {
     '/': {
       lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性
-      title: "Digital Twin All",
+      title: "3D For Fun",
       description: '万物皆可数字孪生'
     },
     /* '/en/': {
