@@ -2,5 +2,6 @@ node_modules/
 yarn-error.log
 yarn.lock
 docs/.vuepress/theme
+docs/CNAME
 package-lock.json
 .DS_Store
