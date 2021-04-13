@@ -9,7 +9,7 @@ module.exports = {
   // 最后更新时间
   lastUpdated: 'Last Updated', // string | boolean
   // 作者
-  author: 'jeff.fu',
+  author: '3D-for-Fun',
   authorAvatar: '/head.png',
   // 备案号
   // record: '京ICP备17067634号-1',
@@ -41,7 +41,7 @@ module.exports = {
   //   clientSecret: 'd23e8556b6d3c85abffbf4b8d853afb2ea08875a',
   // },
   // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
-  repo: 'monk_wulv/monk_wulv.gitee.io',
+  repo: 'https://github.com/3D-for-Fun/3D-for-Fun.github.io',
   // // 假如文档不是放在仓库的根目录下：
   docsDir: 'docs',
   // // 假如文档放在一个特定的分支下：

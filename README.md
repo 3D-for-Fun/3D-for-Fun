@@ -1,6 +1,6 @@
 ---
 home: true
-heroText: Digital Twin All
+heroText: 3D-for-Fun
 # tagline: bit code
 # heroImage: /hero.png
 # heroImageStyle:

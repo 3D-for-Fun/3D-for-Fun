@@ -5,7 +5,7 @@ module.exports = {
       link: '/',
       // icon: 'reco-blog'
     },
-    {
+    /* {
       text: '知识树',
       // icon: 'reco-api',
       items: [
@@ -16,7 +16,7 @@ module.exports = {
           ],
         },
       ]
-    },
+    }, */
     // {
       // text: '孪生引擎', items: [
         // { text: 'TOPOKit', link: 'https://kitlab.gitee.io/topokit-sdk/#/hello' },

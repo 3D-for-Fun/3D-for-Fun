@@ -6,7 +6,7 @@
 export default {
   data() {
     return {
-      name: "jeff.fu",
+      name: "3D-for-Fun",
     };
   },
 };
