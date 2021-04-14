@@ -19,7 +19,7 @@ categories:
 
 > 2020-05-28日，虚幻官方论坛发过[From Ants to Outer Space](https://forums.unrealengine.com/t/inside-unreal-from-ants-to-outer-space-may-28/144011)的文章，作者用非常tricky的方式模拟了从地面上的一个小蚂蚁飞到外太空看地球的场景。
 
-> 早期Cesium提供了Javascript语言的CesiumJS框架，如今Cesium for Unreal于2020-03-30正式发布，让虚幻引擎具有了[Google Earth](https://baike.baidu.com/item/%E8%B0%B7%E6%AD%8C%E5%9C%B0%E7%90%83)的能力，为模拟真实世界打开了一扇新的大门。
+> 早期Cesium提供了Javascript语言的CesiumJS框架，如今Cesium for Unreal于2021-03-30正式发布，让虚幻引擎具有了[Google Earth](https://baike.baidu.com/item/%E8%B0%B7%E6%AD%8C%E5%9C%B0%E7%90%83)的能力，为模拟真实世界打开了一扇新的大门。
 
 这是一份关于用Cesium World Terrain和Cesium OSM Buildings创建Cesium for Unreal应用的快速入门教程。（译者注：需要您具有基本的虚幻引擎使用技能，懂一点C++更好。关于虚幻引擎的基本技能，请参考官方[在线学习教程](https://www.unrealengine.com/zh-CN/onlinelearning-courses)）：
 * [初识虚幻引擎](https://www.unrealengine.com/zh-CN/onlinelearning-courses/your-first-hour-with-unreal-engine)
@@ -144,7 +144,7 @@ CesiumSunSky蓝图给室外场景增加了炫酷的天阳光照明，它扩展�
 ![](./images/quickstart/cesium-georeference.png)
 将这些属性调整为您想要的值。例如，以下建筑物位于美国伊利诺伊州芝加哥市，经度-87.629799，纬度41.878101，高度2250.0。
 ![](./images/quickstart/chicago.gif)
-设置**CesiumGeoreference**原点后，编辑器相机将立即跳转到那里。但是，尽管起源发生了变化，但**FloatingPawn**会进行自我调整，以保持其在地球上的先前位置。当你点击**运行**按钮时，如果您想在芝加哥开始，在**世界大纲视图**中选中**FloatingPawn**，设置其位置为（0，0，0）。
+设置**CesiumGeoreference**原点后，编辑器相机将立即跳转到那里。但是，尽管原点发生了变化，但**FloatingPawn**会进行自我调整，以保持其在地球上的先前位置。当你点击**运行**按钮时，如果您想在芝加哥开始，在**世界大纲视图**中选中**FloatingPawn**，设置其位置为（0，0，0）。
 
 4. 点击工具栏**运行**按钮，然后使用键盘W，A，S和D键以及鼠标在地球上漫游！用鼠标滚轮可以控制飞行速度。当相机离地面近时，往下滚动鼠标滚轮降低飞行速度；当相机离地面远时，向上滚动鼠标滚轮增加飞行速度。在编辑器中，还可以用右上角的控件修改相机移动速度。
 ![](./images/quickstart/camera-speed-widget.png)
@@ -152,3 +152,7 @@ CesiumSunSky蓝图给室外场景增加了炫酷的天阳光照明，它扩展�
 
 ## 下一步
 现在，您可以添加更多资产并自定义场景了！继续添加倾斜摄影资产（敬请期待）。
+
+都看到这里了，加个技术交流群一起组队研究呗^^
+
+![](./images/barcode.png)
