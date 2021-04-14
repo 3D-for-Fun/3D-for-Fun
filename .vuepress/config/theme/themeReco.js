@@ -23,15 +23,15 @@ module.exports = {
   // debug: false // Set debug to true if you want to inspect the dropdown
   // },
   // valine 设置
-  // valineConfig: {
-  // appId: 'jvc9s4BkJYQNOcpsbVTPMePe-gzGzoHsz',
-  // appKey: 'Js91M9DfM9vPwVaUj7xdkbxh',
-  // placeholder: '填写邮箱可以收到回复提醒哦！',
-  // verify: true, // 验证码服务
-  // // notify: true, // 
-  // recordIP: true,
-  // showComment: false
-  // },
+  valineConfig: {
+    appId: 'nLwgH9Ezcm983SDE1dIKjVUc-gzGzoHsz',
+    appKey: 'T8VxAxjz9DgNREaJy7c1j6FY',
+    placeholder: '填写邮箱可以收到回复提醒哦！',
+    verify: true, // 验证码服务
+    notify: true, //
+    recordIP: true,
+    showComment: true,
+  },
   // vssueConfig: {
   //   admins: ['recoluan'],
   //   platform: 'github',
@@ -48,6 +48,6 @@ module.exports = {
   docsBranch: 'gh-pages-source',
   // // 默认是 false, 设置为 true 来启用
   editLinks: true,
-  mode: 'auto',// dark, auto , light
-  codeTheme: 'tomorrow'
-}
+  mode: 'auto', // dark, auto , light
+  codeTheme: 'tomorrow',
+};
