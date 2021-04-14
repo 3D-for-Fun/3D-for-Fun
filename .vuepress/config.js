@@ -73,11 +73,11 @@ module.exports = {
       site_url: 'https://vuepress-theme-reco.recoluan.com',
       copyright: ''
     }], */
-    /* ['@vuepress-reco/bulletin-popover', {
+     ['@vuepress-reco/bulletin-popover', {
       body: [
         {
           type: 'title',
-          content: '欢迎加入QQ交流群 🎉🎉🎉',
+          content: '欢迎加入QQ交流群: 517825387🎉🎉🎉',
           style: 'text-aligin: center;'
         },
         {
@@ -92,6 +92,6 @@ module.exports = {
           link: '/donate'
         }
       ]
-    }] */
+    }] 
   ]
 }  
