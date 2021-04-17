@@ -1,5 +1,5 @@
 ---
-title: Cesium for Unreal快速入门（译）
+title: （一）Cesium for Unreal快速入门（译）
 date: 2021-04-10
 author: 'ue001'
 lang: 'zh-CN'
@@ -151,7 +151,7 @@ CesiumSunSky蓝图给室外场景增加了炫酷的天阳光照明，它扩展�
 
 
 ## 下一步
-现在，您可以添加更多资产并自定义场景了！继续添加倾斜摄影资产（敬请期待）。
+现在，您可以添加更多资产并自定义场景了！[（二）添加倾斜摄影模型（译）](./cesium-photogrammetry.html)。
 
 都看到这里了，加个技术交流群一起组队研究呗^^
 
