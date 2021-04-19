@@ -1,13 +1,12 @@
 ---
 title: (一) Hello Three.js and TypeScript
-date: 2021-04-10
+date: 2021-04-19
 author: 'ue001'
 lang: 'zh-CN'
 sidebar: 'auto'
 categories:
  - Blog
  - ThreeJS
- - TypeScript
 ---
 
 ## 1. 概述

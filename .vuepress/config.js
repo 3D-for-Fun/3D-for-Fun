@@ -24,7 +24,7 @@ module.exports = {
     '/': {
       lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性
       title: "3D For Fun",
-      description: '3D For Fun'
+      description: '爱好图形，专注三维'
     },
     /* '/en/': {
       lang: 'en-US',
