@@ -13,9 +13,9 @@ categories:
 
 本文主要介绍以下三个部分：
 
-> 配置开发环境（vs code, git and nodejs）
-> TypeScript快速入门
-> 初始化Three.js项目工程
+- 配置开发环境（vs code, git and nodejs）
+- TypeScript快速入门
+- 初始化Three.js项目工程
 
 本文代码仓库地址：[https://github.com/ue007/three.ts](https://link.zhihu.com/?target=https%3A//github.com/ue007/three.ts)
 
