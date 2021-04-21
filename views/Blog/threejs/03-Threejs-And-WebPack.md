@@ -1,6 +1,6 @@
 ---
 title: (三) Threejs And WebPack
-date: 2021-04-21
+date: 2021-04-22
 author: 'ue007'
 lang: 'zh-CN'
 sidebar: 'auto'
@@ -201,6 +201,7 @@ var promise = import('module');
 - `CommonJs`是动态语法可以写在判断里，`ES6 Module`静态语法只能写在顶层
 - `CommonJs`的 `this` 是当前模块，`ES6 Module`的 `this` 是 `undefined`
 
+
 # 3. Relative Import References（相对路径引入）
 
 到目前为止，我通常使用相对路径URL，将特定的模块引入到client.ts模块中，然后配置client目录下的tsconfig.json来配置绝对路径，告知TypeScript编译器应该使用哪个类型说明文件（d.ts），然后引入对应的模块。这种方式，我们称之为相对路径引入。
@@ -232,7 +233,8 @@ import * as THREE from 'three'
 Uncaught TypeError: Failed to resolve module specifier "three". Relative references must start with either "/", "./", or "../".
 ```
 
-![image](https://cdn.nlark.com/yuque/0/2021/png/244017/1619010046606-d1a95d18-7962-49ba-ac74-1b8121c8e042.png?x-oss-process=image%2Fresize%2Cw_1500)
+![image](https://i.loli.net/2021/04/21/HQdYiWSyk8D5zo1.png)
+
 
 ## 4.1 为什么这样呢？
 
