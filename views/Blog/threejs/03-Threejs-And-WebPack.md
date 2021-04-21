@@ -202,7 +202,7 @@ var promise = import('module');
 - `CommonJs`的 `this` 是当前模块，`ES6 Module`的 `this` 是 `undefined`
 
 
-# 3. Relative Import References（相对路径引入）
+# 3. Relative Import References
 
 到目前为止，我通常使用相对路径URL，将特定的模块引入到client.ts模块中，然后配置client目录下的tsconfig.json来配置绝对路径，告知TypeScript编译器应该使用哪个类型说明文件（d.ts），然后引入对应的模块。这种方式，我们称之为相对路径引入。
 
@@ -211,7 +211,7 @@ import * as THREE from '/build/three.module.js';
 import { OrbitControls } from '/jsm/controls/OrbitControls';
 ```
 
-# 4. Module Resolution（模块解析）
+# 4. Module Resolution
 
 然而，市面上主流js项目，包括Three.js，都会使用模块解析方式进行引入模块，这种方式非常容易理解，但也会存在一定的问题。
 
