@@ -277,7 +277,7 @@ Module Specifiers依赖于模块解析遍历策略。默认情况下，这在浏
 
 
 
-# 5. Hot Module Replacement（热模块替换）
+# 5. Hot Module Replacement
 
 模块热替换(HMR - hot module replacement)功能会在应用程序运行过程中，替换、添加或删除 模块，而无需重新加载整个页面。主要是通过以下几种方式，来显著加快开发速度：
 
