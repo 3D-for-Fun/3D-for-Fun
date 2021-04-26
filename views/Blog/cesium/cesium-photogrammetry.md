@@ -13,6 +13,8 @@ categories:
 
 > 上一篇：[（一）Cesium for Unreal快速入门（译）](./cesium-unreal-quickstart.html)
 
+<iframe src="//player.bilibili.com/player.html?aid=715248260&bvid=BV1WQ4y1Z7hW&cid=325335854&page=1" width="800" height="450" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
 这篇教程讲解了如何用**Cesium for Unreal**从**Cesium ion**导入倾斜摄影模型。您将使用世界上最宜居城市之一的模型：澳大利亚墨尔本。
 
 ![](./images/photogrammetry/photogrammetry.jpg)
