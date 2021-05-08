@@ -1,6 +1,6 @@
 ---
-title: (三) Threejs And WebPack
-date: 2021-04-22
+title: (四) Object3D
+date: 2021-04-23
 author: 'ue007'
 lang: 'zh-CN'
 sidebar: 'auto'
@@ -13,291 +13,348 @@ categories:
 
 本文主要介绍以下内容：
 
-> 1. 了解主流模块规范
-> 2. 了解Relative Import References（相对路径引入）
-> 3. 了解Module Resolution（模块解析）
-> 4. 了解Hot Module Replacement（热模块替换）
-> 5. 使用Threejs TypeScript Webpack Boilerplate模板
+> 1. 了解三维对象 Object3D
+> 2. 了解三维岁对象层次结构 Object3D Hierarchy
+> 3. **理解：三维世界 = 物体 + 关系**
 
 专栏代码地址：https://github.com/ue007/three.ts
 
-本文代码地址：https://github.com/ue007/three.ts/tree/main/04-Threejs-And-WebPack
+本文代码地址：https://github.com/ue007/three.ts/tree/main/05-Object3D
 
-# 2. **主流的模块规范**
+# 2. Object3D
 
-**目前主流的模块规范**
+首先，来介绍下什么是Object3D？
 
-- UMD
-- CommonJs
-- ES6 Module
+Three.Object3D是threejs中的基类，是一切的三维空间的基础，就是一个抽象概念，表示着一个可以在三维空间中自由移动、自由旋转、自由缩放，可以控制显示隐藏的物体，这个Object3D可以是你自己，可以是电脑、鼠标、房子、飞机、笔等等。所以，Object3D最主要是具有下面四点特性：
 
-## 2.1 UMD模块（通用模块）
+> - Rotation 旋转
+> - Position 位置
+> - Scale 缩放
+> - Visiblity 可见性
 
-```javascript
-(function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-    typeof define === 'function' && define.amd ? define(factory) :
-    (global.libName = factory());
-}(this, (function () { 'use strict';})));
-```
+然而在三维世界中，如何用数学的方式，来有效控制Position、Rotation、Scale等等空间的事情，就会产生一门学科，叫线性代数，其中矩阵变换是最为重要的手段，详细可以参考数据**[《3D.Math.Primer.for.Graphics.and.Game.Development》](https://book.douban.com/subject/2028710/)。**也可以参考Game101课程笔记**：**[计算机图形学一：基础变换矩阵总结(缩放，旋转，位移)](https://zhuanlan.zhihu.com/p/144323332)。
 
-如果你在js文件头部看到这样的代码，那么这个文件使用的就是 UMD 规范。实际上就是 amd + commonjs + 全局变量 这三种风格的结合。这段代码就是对当前运行环境的判断，如果是 Node 环境 就是使用 CommonJs 规范， 如果不是就判断是否为 AMD 环境， 最后导出全局变量。有了 UMD 后我们的代码和同时运行在 Node 和 浏览器上。所以现在前端大多数的库最后打包都使用的是 UMD 规范。
+当然讲的最好的，还是**[3blue1brown的线代本质](https://link.zhihu.com/?target=https%3A//www.bilibili.com/video/BV1Ys411k7yQ%3Ffrom%3Dsearch%26seid%3D15562968547395149083)。对数学感兴趣的可以深入研究，不研究的话，也就只需要知道，用数学矩阵可以快速计算物体的一切在空间中发生的变化。**
 
-## 2.2  CommonJS
+在Three.js中，如下所有的Class，都是继承了Object3D：
 
-Nodejs 环境所使用的模块系统就是基于CommonJs规范实现的，我们现在所说的CommonJs规范也大多是指Node的模块系统。
+- [Scene](https://threejs.org/docs/#api/en/scenes/Scene)
+- [Mesh](https://threejs.org/docs/#api/en/objects/Mesh)
 
-### 模块导出
+- - [InstancedMesh](https://threejs.org/docs/#api/en/objects/InstancedMesh)
+  - [SkinnedMesh](https://threejs.org/docs/#api/en/objects/SkinnedMesh)
 
-关键字：`module.exports` `exports`
+- [Camera](https://threejs.org/docs/#api/en/cameras/Camera)
 
-```javascript
-// foo.js
+- - [OrthographicCamera](https://threejs.org/docs/#api/en/cameras/OrthographicCamera)
+  - [PerspectiveCamera](https://threejs.org/docs/#api/en/cameras/PerspectiveCamera)
 
-//一个一个 导出
-module.exports.age = 1
-module.exports.foo = function(){}
-exports.a = 'hello'
+- [CubeCamera](https://threejs.org/docs/#api/en/cameras/CubeCamera)
+- [Group](https://threejs.org/docs/#api/en/objects/Group)
+- [Sprite](https://threejs.org/docs/#api/en/objects/Sprite)
+- [LOD](https://threejs.org/docs/#api/en/objects/LOD)
+- [Bone](https://threejs.org/docs/#api/en/objects/Bone)
+- [Line](https://threejs.org/docs/#api/en/objects/Line)
 
-//整体导出
-module.exports = { age: 1, a: 'hello', foo:function(){} }
+- - [LineLoop](https://threejs.org/docs/#api/en/objects/LineLoop)
+  - [LineSegments](https://threejs.org/docs/#api/en/objects/LineSegments)
 
-//整体导出不能用`exports` 用exports不能在导入的时候使用
-exports = { age: 1, a: 'hello', foo:function(){} }
-```
+- [Points](https://threejs.org/docs/#api/en/objects/Points)
+- [Light](https://threejs.org/docs/#api/en/lights/Light)
 
-这里需要注意 `exports` 不能被赋值，可以理解为在模块开始前`exports = module.exports`， 因为赋值之后`exports`失去了 对`module.exports`的引用，成为了一个模块内的局部变量
+- - [AmbientLight](https://threejs.org/docs/#api/en/lights/AmbientLight)
+  - [DirectionalLight](https://threejs.org/docs/#api/en/lights/DirectionalLight)
+  - [HemisphereLight](https://threejs.org/docs/#api/en/lights/HemisphereLight)
+  - [PointLight](https://threejs.org/docs/#api/en/lights/PointLight)
+  - [RectAreaLight](https://threejs.org/docs/#api/en/lights/RectAreaLight)
+  - [SpotLight](https://threejs.org/docs/#api/en/lights/SpotLight)
 
-### 模块导入
+- [AudioListener](https://threejs.org/docs/#api/en/audio/AudioListener)
+- [Audio](https://threejs.org/docs/#api/en/audio/Audio)
 
-关键字：`require`
+- - [PositionalAudio](https://threejs.org/docs/#api/en/audio/PositionalAudio)
 
-```javascript
-const foo = require('./foo.js')
-console.log(foo.age) //1
-```
-
-**模块导入规则：**
-
-假设以下目录为 `src/app/index.js` 的文件 调用 `require()`
-
-##### **`./moduleA` 相对路径开头**
-
-在没有指定后缀名的情况下
-
-先去寻找同级目录同级目录：`src/app/`
-
-- `src/app/moduleA` 无后缀名文件 按照`javascript`解析
-- `src/app/moduleA.js` js文件 按照`javascript`解析
-- `src/app/moduleA.json` json文件 按照`json`解析
-- `src/app/moduleA.node` node文件 按照加载的编译插件模块dlopen
-
-同级目录没有 `moduleA` **文件**会去找同级的 `moduleA`**目录**：`src/app/moduleA`
-
-- `src/app/moduleA/package.json` 判断该目录是否有`package.json`文件， 如果有 找到`main`字段定义的文件返回， 如果 `main` 字段指向文件不存在 或 `main`字段不存在 或 `package.json`文件不存在向下执行
-- `src/app/moduleA/index.js`
-- `src/app/moduleA/index.json`
-- `src/app/moduleA/index.node`
+- [ImmediateRenderObject](https://threejs.org/docs/#api/en/extras/objects/ImmediateRenderObject)
+- [SpotLightHelper](https://threejs.org/docs/#api/en/helpers/SpotLightHelper)
+- [HemisphereLightHelper](https://threejs.org/docs/#api/en/helpers/HemisphereLightHelper)
+- [DirectionalLightHelper](https://threejs.org/docs/#api/en/helpers/DirectionalLightHelper)
+- [ArrowHelper](https://threejs.org/docs/#api/en/helpers/ArrowHelper)
 
 
 
-##### **`/module/moduleA` 绝对路径开头**
+接下来，我们使用three.js 以及GUI面板，对Object3D的position、scale、rotation进行调试，看看具体的效果。
 
-直接在`/module/moduleA`目录中寻找 规则同上
+## 2.1 GUI控制Position
 
-
-
-## 2.3 ES6 Module
+在client.ts中加入控制Position的代码：
 
 ```javascript
-ES6` 之前 `javascript` 一直没有属于自己的模块规范，所以社区制定了 `CommonJs`规范， `Node` 从 `Commonjs` 规范中借鉴了思想于是有了 `Node` 的 `module`，而 `AMD 异步模块` 也同样脱胎于 `Commonjs` 规范，之后有了运行在浏览器上的 `require.js
+const cubeFolder = gui.addFolder('Cube');
+const cubePositionFolder = cubeFolder.addFolder('Position');
+cubePositionFolder.add(cube.position, 'x', -10, 10);
+cubePositionFolder.add(cube.position, 'y', -10, 10);
+cubePositionFolder.add(cube.position, 'z', -10, 10);
+cubeFolder.open();
 ```
 
-`es6 module` 基本语法：
 
-### export
+
+![chrome_X4Dau45u1S.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619083645194-e5dc23f1-8de5-49fd-a383-b37828362e3e.png)
+
+
+
+运行代码，调试下参数试试，尝试理解下基础的概念即可。
+
+## 2.2 GUI控制Rotation
+
+在client.ts中加入控制Rotation的代码：
 
 ```javascript
-export * from 'module'; //重定向导出 不包括 module内的default
-export { name1, name2, ..., nameN } from 'module'; // 重定向命名导出
-export { import1 as name1, import2 as name2, ..., nameN } from 'module'; // 重定向重命名导出
-
-export { name1, name2, …, nameN }; // 与之前声明的变量名绑定 命名导出
-export { variable1 as name1, variable2 as name2, …, nameN }; // 重命名导出
-
-export let name1 = 'name1'; // 声明命名导出 或者 var, const，function， function*, class
-
-export default expression; // 默认导出
-export default function () { ... } // 或者 function*, class
-export default function name1() { ... } // 或者 function*, class
-export { name1 as default, ... }; // 重命名为默认导出
+const cubeFolder = gui.addFolder('Cube');
+const cubeRotationFolder = cubeFolder.addFolder('Rotation');
+cubeRotationFolder.add(cube.rotation, 'x', 0, Math.PI * 2, 0.01);
+cubeRotationFolder.add(cube.rotation, 'y', 0, Math.PI * 2, 0.01);
+cubeRotationFolder.add(cube.rotation, 'z', 0, Math.PI * 2, 0.01);
+cubeFolder.open();
 ```
 
-**`export` 规则**
+![chrome_kCc82pXX0D.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619083537425-5f2f6e18-d86e-4eac-9be1-dc2c389654eb.png)
 
-- `export * from ''` 或者 `export {} from ''`，重定向导出，重定向的命名并不能在本模块使用，只是搭建一个桥梁，例如：这个`a`并不能在本模块内使用
-- `export {}`， 与变量名绑定，命名导出
-- `export Declaration`，声明的同时，命名导出， [Declaration](http://www.ecma-international.org/ecma-262/6.0/#sec-statements)就是： `var`, `let`, `const`, `function`, `function*`, `class` 这一类的声明语句
-- `export default AssignmentExpression`，默认导出， [AssignmentExpression](http://www.ecma-international.org/ecma-262/6.0/#sec-expressions)的 范围很广，可以大致理解 为除了声明`Declaration`（其实两者是有交叉的），`a=2`,`i++`,`i/4`,`a===b`,`obj[name]`,`name in obj`,`func()`,`new P()`,`[1,2,3]`,`function(){}`等等很多
 
-### import
+
+## 2.3 GUI控制Scale
+
+在client.ts中加入控制Scale的代码：
 
 ```javascript
-// 命名导出 module.js
-let a = 1,b = 2
-export { a, b }
-export let c = 3
-
-// 命名导入 main.js
-import { a, b, c } from 'module'; // a: 1  b: 2  c: 3
-import { a as newA, b, c as newC } from 'module'; // newA: 1  b: 2  newC: 3
-
-
-// 默认导出 module.js
-export default 1
-
-// 默认导入 main.js
-import defaultExport from 'module'; // defaultExport: 1
-
-
-// 混合导出 module.js
-let a = 1
-export { a }
-const b = 2
-export { b }
-export let c = 3
-export default [1, 2, 3]
-
-// 混合导入 main.js
-import defaultExport, { a, b, c as newC} from 'module'; //defaultExport: [1, 2, 3]  a: 1  b: 2  newC: 3
-import defaultExport, * as name from 'module'; //defaultExport: [1, 2, 3]  name: { a: 1, b: 2, c: 3 }
-import * as name from 'module'; // name: { a: 1, b: 2, c: 3, default: [1, 2, 3] }
-
-
-// module.js
-Array.prototype.remove = function(){}
-
-//副作用 只运行一个模块
-import 'module'; // 执行module 不导出值  多次调用module.js只运行一次
-
-//动态导入(异步导入)
-var promise = import('module');
+const cubeScaleFolder = cubeFolder.addFolder('Scale');
+cubeScaleFolder.add(cube.scale, 'x', -5, 5, 0.1);
+cubeScaleFolder.add(cube.scale, 'y', -5, 5, 0.1);
+cubeScaleFolder.add(cube.scale, 'z', -5, 5, 0.1);
+cubeFolder.add(cube, 'visible', true);
 ```
 
-**`import`** **规则**
+![chrome_8SkWsIY7Xi.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619083697099-e9b69d2d-aa5e-4130-b957-f71987ebb918.png)
 
-- `import { } from 'module'`， 导入`module.js`的**命名导出**
-- `import defaultExport from 'module'`， 导入`module.js`的**默认导出**
-- `import * as name from 'module'`， 将`module.js的`的**所有导出**合并为`name`的对象，`key`为导出的命名，默认导出的`key`为`default`
-- `import 'module'`，副作用，只是运行`module`，不为了导出内容例如 polyfill，多次调用次语句只能执行一次
-- `import('module')`，动态导入返回一个 `Promise`，`TC39`的`stage-3`阶段被提出 [tc39 import](https://github.com/tc39/proposal-dynamic-import/#import)
+## 2.4 GUI控制Visible
 
-## 2.4 CommonJs 和 ES6 Module 的区别
-
-其实上面我们已经说到了一些区别
-
-- `CommonJs`导出的是变量的一份拷贝，`ES6 Module`导出的是变量的绑定（`export default` 是特殊的）
-- `CommonJs`是单个值导出，`ES6 Module`可以导出多个
-- `CommonJs`是动态语法可以写在判断里，`ES6 Module`静态语法只能写在顶层
-- `CommonJs`的 `this` 是当前模块，`ES6 Module`的 `this` 是 `undefined`
-
-
-# 3. Relative Import References
-
-到目前为止，我通常使用相对路径URL，将特定的模块引入到client.ts模块中，然后配置client目录下的tsconfig.json来配置绝对路径，告知TypeScript编译器应该使用哪个类型说明文件（d.ts），然后引入对应的模块。这种方式，我们称之为相对路径引入。
-
-```
-import * as THREE from '/build/three.module.js';
-import { OrbitControls } from '/jsm/controls/OrbitControls';
-```
-
-# 4. Module Resolution
-
-然而，市面上主流js项目，包括Three.js，都会使用模块解析方式进行引入模块，这种方式非常容易理解，但也会存在一定的问题。
-
-下面，我们将改进之前的代码，按照模块解析方式，引入代码。
-
-为了使用Module Resolution，我们尝试 将相对路径改成模块引入：
+在client.ts中加入控制visible的代码：
 
 ```javascript
-// 相对路径
-import * as THREE from '/build/three.module.js';
-
-// es6 module
-import * as THREE from 'three'
+cubeFolder.add(cube, 'visible', true);
 ```
 
-执行命令：npm run dev 编译运行之后，发现浏览器中报错：
+![chrome_nythnam0Pg.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619083748024-f75162d8-3b88-4802-9660-e8f08cd7fd3c.png)
+
+
+
+## 2.5 完整代码
+
+```javascript
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import Stats from 'three/examples/jsm/libs/stats.module';
+import { GUI } from 'three/examples/jsm/libs/dat.gui.module';
+
+const scene: THREE.Scene = new THREE.Scene();
+
+const camera: THREE.PerspectiveCamera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000
+);
+
+const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+
+const geometry: THREE.BoxGeometry = new THREE.BoxGeometry();
+const material: THREE.MeshBasicMaterial = new THREE.MeshBasicMaterial({
+  color: 0x00ff00,
+  wireframe: true,
+});
+
+const cube: THREE.Mesh = new THREE.Mesh(geometry, material);
+scene.add(cube);
+
+camera.position.z = 2;
+
+window.addEventListener('resize', onWindowResize, false);
+function onWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  render();
+}
+
+const stats = Stats();
+document.body.appendChild(stats.dom);
+
+const gui = new GUI();
+
+const cubeFolder = gui.addFolder('Cube');
+const cubeRotationFolder = cubeFolder.addFolder('Rotation');
+cubeRotationFolder.add(cube.rotation, 'x', 0, Math.PI * 2, 0.01);
+cubeRotationFolder.add(cube.rotation, 'y', 0, Math.PI * 2, 0.01);
+cubeRotationFolder.add(cube.rotation, 'z', 0, Math.PI * 2, 0.01);
+const cubePositionFolder = cubeFolder.addFolder('Position');
+cubePositionFolder.add(cube.position, 'x', -10, 10);
+cubePositionFolder.add(cube.position, 'y', -10, 10);
+cubePositionFolder.add(cube.position, 'z', -10, 10);
+const cubeScaleFolder = cubeFolder.addFolder('Scale');
+cubeScaleFolder.add(cube.scale, 'x', -5, 5, 0.1);
+cubeScaleFolder.add(cube.scale, 'y', -5, 5, 0.1);
+cubeScaleFolder.add(cube.scale, 'z', -5, 5, 0.1);
+cubeFolder.add(cube, 'visible', true);
+cubeFolder.open();
+
+const cameraFolder = gui.addFolder('Camera');
+cameraFolder.add(camera.position, 'z', 0, 10, 0.01);
+cameraFolder.open();
+
+var animate = function () {
+  requestAnimationFrame(animate);
+
+  controls.update();
+
+  render();
+
+  stats.update();
+};
+
+function render() {
+  renderer.render(scene, camera);
+}
+animate();
+```
+
+![chrome_uI8wojM6iR.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619083773338-216cb8f9-c818-421b-bd35-8514df4f6297.png?x-oss-process=image%2Fresize%2Cw_1500)
+
+# 3. Object3D Hierarchy
+
+上一章，只在空间中创建了一个立方体，然而真实的世界中，是存在各种奇形怪状、关联关系复杂的物体的，换言之，世界是包罗万象、参差不齐、错综复杂、千丝万缕，即：
+
+```
+三维世界 = 物体 + 关系
+```
+
+基类Object3D，除了定义物体的空间信息之外，还得记录物体与物体之间的关系，比如父子关系，也是最简单的关系；
+
+## 3.1 Scene类
+
+Scene类，表示整个世界，我们通过add的方式，添加各种物体,表示物体与空间之间的关系：
+
+```javascript
+Scene.add(object3d);
+```
+
+## 3.2 Add方法
+
+物体与物体之间的关系，也可以通过add方法添加，最终会形成一个关系层次结构图：
 
 ```bash
-Uncaught TypeError: Failed to resolve module specifier "three". Relative references must start with either "/", "./", or "../".
+scene
+    |--ObjectA 
+             |--Object B
+                       |--Object C
 ```
 
-![image](https://i.loli.net/2021/04/21/HQdYiWSyk8D5zo1.png)
+## 3.3 示例
 
+下面，我们通过示例，来理解物体之间的关系。
 
-## 4.1 为什么这样呢？
+在空间中，创建三个球，颜色分别为：red、green、blue，分别代表父亲（father）、自己（myself）、儿子（son）;
 
-当引入模块时，指明模块位置的部分被称为 Module specifiers，也叫做 import specifier 。在项目中，tsconfig.json中有个配置：`moduleResolution: "node"`,这个参数将告知编译器该环境为node环境，仅对node环境支持，然后会对node_modules进行扫描。
+> 1. **改变父亲的空间信息，会影响到我自己的空间信息，以及影响儿子的空间信息；**
+> 2. **改变我的空间信息，不会影响父亲的空间信息，但是会影响儿子的空间信息；**
+> 3. **改变儿子的空间信息，不会影响父亲和我自己的信息；**
 
-然而在浏览器中打开的时候，浏览器对模块的引入有一些严格的限制，裸模块目前是不支持的，这样是为了在将来为裸模块添加特定的意义，如下面这些做法是不行的：
+创建三个物体，分别表示父亲、我、儿子：
 
-```typescript
-// Not supported (yet):
-import {shout} from 'jquery';
-import {shout} from 'lib.mjs';
-import {shout} from 'modules/lib.mjs';
+```javascript
+// father
+const father = new THREE.Mesh(
+  new THREE.SphereBufferGeometry(),
+  new THREE.MeshPhongMaterial({ color: 0xff0000 })
+);
+father.position.set(0, 0, 0);
+scene.add(father);
+father.add(new THREE.AxesHelper(5));
+
+// myself
+const myself = new THREE.Mesh(
+  new THREE.SphereBufferGeometry(),
+  new THREE.MeshPhongMaterial({ color: 0x00ff00 })
+);
+myself.position.set(4, 0, 0);
+father.add(myself);
+myself.add(new THREE.AxesHelper(5));
+
+// son
+const son = new THREE.Mesh(
+  new THREE.SphereBufferGeometry(),
+  new THREE.MeshPhongMaterial({ color: 0x0000ff })
+);
+son.position.set(4, 0, 0);
+myself.add(son);
+son.add(new THREE.AxesHelper(5));
 ```
 
-下面这些的用法则都是支持的
+GUI面板中添加控制参数：
 
-```typescript
-// Supported:
-import {shout} from './lib.mjs';
-import {shout} from '../lib.mjs';
-import {shout} from '/modules/lib.mjs';
-import {shout} from 'https://simple.example/modules/lib.mjs';
+```javascript
+// gui
+const gui = new GUI();
+const fatherFolder = gui.addFolder('父亲');
+fatherFolder.add(father.position, 'x', 0, 10, 0.01).name('X Position');
+fatherFolder.add(father.rotation, 'x', 0, Math.PI * 2, 0.01).name('X Rotation');
+fatherFolder.add(father.scale, 'x', 0, 2, 0.01).name('X Scale');
+fatherFolder.open();
+const myselfFolder = gui.addFolder('我');
+myselfFolder.add(myself.position, 'x', 0, 10, 0.01).name('X Position');
+myselfFolder.add(myself.rotation, 'x', 0, Math.PI * 2, 0.01).name('X Rotation');
+myselfFolder.add(myself.scale, 'x', 0, 2, 0.01).name('X Scale');
+myselfFolder.open();
+const sonFolder = gui.addFolder('儿子');
+sonFolder.add(son.position, 'x', 0, 10, 0.01).name('X Position');
+sonFolder.add(son.rotation, 'x', 0, Math.PI * 2, 0.01).name('X Rotation');
+sonFolder.add(son.scale, 'x', 0, 2, 0.01).name('X Scale');
+sonFolder.open();
 ```
 
-总的来说，目前模块引入路径要求必须是完整的URLs，或者是以`/`,`./`,`../`开头的相对URLs。
+执行命令：
 
-Module Specifiers依赖于模块解析遍历策略。默认情况下，这在浏览器中不起作用，因为浏览器不能直接访问服务器上的文件系统，以遍历所有文件夹并尝试在模块解析过程中所涉及的引用的所有方法。如果从浏览器运行，它将在客户机中触发许多404错误，因为它将尝试寻找引用的所有可能规则。你可以在[TypeScript Module Resolution](https://www.typescriptlang.org/docs/handbook/module-resolution.html)上阅读更多关于模块解析策略的内容。
+```bash
+npm run dev
+```
 
+浏览器中打开localhost:8080，运行结果如下：
 
+![chrome_oDEbW0kjme.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619085313229-0337ec9d-accc-4bd1-b374-f25a580a444c.png?x-oss-process=image%2Fresize%2Cw_1500)
 
-## 4.2 怎么解决呢？
+调整父亲空间信息，围绕x轴旋转，发现三个物体，一起发生了旋转：
 
-在浏览器中解决这个问题，最常用的手段就是将所需要的文件打包至一个js文件中，并将所有模块的命名空间写入内存中，以便调用。
+![chrome_Pc6ftsy8nj.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619085467552-07e1f446-2caf-4fa3-a778-a5830deed193.png?x-oss-process=image%2Fresize%2Cw_1500)
 
-通常我们项目中使用到的打包工具有Webpack、Parcel、Rollup、Browserify等等。在编写本文档时，最常见的模块打包工具是Webpack。
+再调整Green（我自己）球体，平移一定距离，发现我和儿子一起发生了变化，父亲不变：
 
-接下来所以我将演示如何设置Webpack。
-
-当在编译时绑定所有的代码和导入时，浏览器将不需要为了让模块说明符工作而支持模块解析策略。客户端需要的所有代码应该已经在内存中排序，以便在页面下载时引用。
-
-
-
-# 5. Hot Module Replacement
-
-模块热替换(HMR - hot module replacement)功能会在应用程序运行过程中，替换、添加或删除 模块，而无需重新加载整个页面。主要是通过以下几种方式，来显著加快开发速度：
-
-- 保留在完全重新加载页面期间丢失的应用程序状态。
-- 只更新变更内容，以节省宝贵的开发时间。
-- 在源代码中 CSS/JS 产生修改时，会立刻在浏览器中进行更新，这几乎相当于在浏览器 devtools 直接更改样式。
+![chrome_s59lnW0PQI.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619085573041-510541ac-343a-4959-9431-9e41bcf78a31.png?x-oss-process=image%2Fresize%2Cw_1500)
 
 
 
-# 6.Threejs-TypeScript-Webpack模板
+再调整Blue（儿子）球体，旋转一定角度，发现只有儿子发生了变化，我和父亲都不变：
 
-直接下载代码：https://github.com/ue007/three.ts/tree/main/04-Threejs-And-WebPack
+![chrome_R9N4WEQEbv.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619085645642-581651ea-aad3-4b5c-b4fa-7deb4401af9a.png?x-oss-process=image%2Fresize%2Cw_1500)
 
-详细的配置也可以参考之前的文章：[前端工程化](https://webgpu.info/views/Blog/web/01-FrontEnd-Engineering.html#tech-stack)
 
-![image](https://cdn.nlark.com/yuque/0/2021/png/244017/1619012867729-b527d751-6743-4c2d-b0e5-14630205e4d5.png)
 
-# 7. 参考文献
 
-1. [深入 CommonJs 与 ES6 Module](https://segmentfault.com/a/1190000017878394)
-2. [Module Resolution](https://www.typescriptlang.org/docs/handbook/module-resolution.html)
-3. [模块热替换(hot module replacement)](https://webpack.docschina.org/concepts/hot-module-replacement/)
-4. [前端工程化](https://webgpu.info/views/Blog/web/01-FrontEnd-Engineering.html#tech-stack)
+
+
+
+# 4. 总结
+
+**三维世界 = 物体 + 关系**
