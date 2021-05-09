@@ -1,5 +1,5 @@
 ---
-title: （三）使用自定义控制器（译）
+title: （三）Cesium for Unreal使用自定义控制器（译）
 date: 2021-04-20
 author: 'ue001'
 lang: 'zh-CN'
@@ -10,6 +10,8 @@ categories:
 ---
 
 > 原文请参考Cesium官方文档：[Using Custom Controllers](https://cesium.com/docs/tutorials/cesium-unreal-030-custom-controllers/)
+
+> 上一篇：[（二）添加倾斜摄影模型（译）](./cesium-photogrammetry.html)
 
 <iframe src="//player.bilibili.com/player.html?aid=757679498&bvid=BV1i64y1m7kt&cid=325738995&page=1" width="800" height="450" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
@@ -152,7 +154,7 @@ categories:
 禁用此设置将确保您在转动镜头时不再销毁3D Tiles切片。但是，您可能会注意到，禁用此设置后，3D Tiles的整体质量可能会下降。
 
 ## 下一步
-阅读下一个教程**将对象放置在地球上**，以了解有关在虚幻关卡中将对象放置在Cesium中的更多信息。
+阅读下一个教程**[（四）Cesium for Unreal将对象放置在地球上（译）](./cesium-placing-objects.html)**，以了解有关在虚幻关卡中将对象放置在Cesium中的更多信息。
 
 
 都看到这里了，加个技术交流群一起组队研究呗^^
