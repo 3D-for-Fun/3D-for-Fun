@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>(六) Materials-Basic | 3D For Fun</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icon_vuepress_reco.png">
+    <link rel="mask-icon" href="/icon_vuepress_reco.svg" color="#42b983">
+    <meta name="description" content="爱好图形，专注三维">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="author" content="3D-for-Fun">
+    <meta name="keywords" content="vuepress,reco,ue***,vuepress-reco,vuepress-theme-reco,theme,blog,主题">
+    <meta name="theme-color" content="#42b983">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icon_vuepress_reco.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.ac6a33c7.css" as="style"><link rel="preload" href="/assets/js/app.7a57daab.js" as="script"><link rel="preload" href="/assets/js/4.06458381.js" as="script"><link rel="preload" href="/assets/js/1.d2b2af19.js" as="script"><link rel="preload" href="/assets/js/95.c4508fb4.js" as="script"><link rel="prefetch" href="/assets/js/10.e7305a98.js"><link rel="prefetch" href="/assets/js/100.73549dc7.js"><link rel="prefetch" href="/assets/js/101.a9fdd252.js"><link rel="prefetch" href="/assets/js/102.7f3fd78e.js"><link rel="prefetch" href="/assets/js/103.4adf4a2f.js"><link rel="prefetch" href="/assets/js/104.6f77b479.js"><link rel="prefetch" href="/assets/js/105.ff003aac.js"><link rel="prefetch" href="/assets/js/106.40185489.js"><link rel="prefetch" href="/assets/js/107.0b696908.js"><link rel="prefetch" href="/assets/js/108.c1e74da2.js"><link rel="prefetch" href="/assets/js/109.bfa89821.js"><link rel="prefetch" href="/assets/js/11.f3d7c6ef.js"><link rel="prefetch" href="/assets/js/110.71e6be04.js"><link rel="prefetch" href="/assets/js/111.e80c8bb6.js"><link rel="prefetch" href="/assets/js/112.57a7101f.js"><link rel="prefetch" href="/assets/js/113.c54395f3.js"><link rel="prefetch" href="/assets/js/114.bf667ed9.js"><link rel="prefetch" href="/assets/js/115.4ec8628f.js"><link rel="prefetch" href="/assets/js/116.11acc8d2.js"><link rel="prefetch" href="/assets/js/117.a1924acc.js"><link rel="prefetch" href="/assets/js/118.a6deb956.js"><link rel="prefetch" href="/assets/js/12.18f8f630.js"><link rel="prefetch" href="/assets/js/13.fe6d3e10.js"><link rel="prefetch" href="/assets/js/14.c609c513.js"><link rel="prefetch" href="/assets/js/15.dceb2aec.js"><link rel="prefetch" href="/assets/js/16.f47935a1.js"><link rel="prefetch" href="/assets/js/17.d6dad7e7.js"><link rel="prefetch" href="/assets/js/18.6f53c79f.js"><link rel="prefetch" href="/assets/js/19.b7e44cca.js"><link rel="prefetch" href="/assets/js/20.c49dc12b.js"><link rel="prefetch" href="/assets/js/21.cc1afc85.js"><link rel="prefetch" href="/assets/js/22.75629cd4.js"><link rel="prefetch" href="/assets/js/23.d632c3d4.js"><link rel="prefetch" href="/assets/js/24.61564d7c.js"><link rel="prefetch" href="/assets/js/25.f5544c29.js"><link rel="prefetch" href="/assets/js/26.d1a532d6.js"><link rel="prefetch" href="/assets/js/27.658f4513.js"><link rel="prefetch" href="/assets/js/28.d09fa828.js"><link rel="prefetch" href="/assets/js/29.78795526.js"><link rel="prefetch" href="/assets/js/30.0edfd37e.js"><link rel="prefetch" href="/assets/js/31.58a9c184.js"><link rel="prefetch" href="/assets/js/32.2c376e0e.js"><link rel="prefetch" href="/assets/js/33.da0093c1.js"><link rel="prefetch" href="/assets/js/34.07122f69.js"><link rel="prefetch" href="/assets/js/35.e65585a9.js"><link rel="prefetch" href="/assets/js/36.c02c76f3.js"><link rel="prefetch" href="/assets/js/37.33355523.js"><link rel="prefetch" href="/assets/js/38.c6e10ff4.js"><link rel="prefetch" href="/assets/js/39.ccee203e.js"><link rel="prefetch" href="/assets/js/40.fb80473a.js"><link rel="prefetch" href="/assets/js/41.957a89c9.js"><link rel="prefetch" href="/assets/js/42.73eda345.js"><link rel="prefetch" href="/assets/js/43.c7373cd2.js"><link rel="prefetch" href="/assets/js/44.55360ae1.js"><link rel="prefetch" href="/assets/js/45.36e298d6.js"><link rel="prefetch" href="/assets/js/46.1ae1e5fb.js"><link rel="prefetch" href="/assets/js/47.70da4a31.js"><link rel="prefetch" href="/assets/js/48.6aa42abe.js"><link rel="prefetch" href="/assets/js/49.a114ab37.js"><link rel="prefetch" href="/assets/js/5.1cdea813.js"><link rel="prefetch" href="/assets/js/50.47d2e761.js"><link rel="prefetch" href="/assets/js/51.dd898a4a.js"><link rel="prefetch" href="/assets/js/52.ec359b4e.js"><link rel="prefetch" href="/assets/js/53.52581eae.js"><link rel="prefetch" href="/assets/js/54.71323b19.js"><link rel="prefetch" href="/assets/js/55.4db7df63.js"><link rel="prefetch" href="/assets/js/56.e0ec294e.js"><link rel="prefetch" href="/assets/js/57.1cf78bae.js"><link rel="prefetch" href="/assets/js/58.73ef5f01.js"><link rel="prefetch" href="/assets/js/59.73b68286.js"><link rel="prefetch" href="/assets/js/6.644e6409.js"><link rel="prefetch" href="/assets/js/60.cfb7712c.js"><link rel="prefetch" href="/assets/js/61.91a7306f.js"><link rel="prefetch" href="/assets/js/62.7cbd2025.js"><link rel="prefetch" href="/assets/js/63.967fa6ae.js"><link rel="prefetch" href="/assets/js/64.5df9ecd8.js"><link rel="prefetch" href="/assets/js/65.e9d3bc25.js"><link rel="prefetch" href="/assets/js/66.4b8ebc3c.js"><link rel="prefetch" href="/assets/js/67.c3b11f76.js"><link rel="prefetch" href="/assets/js/68.e4197d7d.js"><link rel="prefetch" href="/assets/js/69.ff40a912.js"><link rel="prefetch" href="/assets/js/7.79414905.js"><link rel="prefetch" href="/assets/js/70.1884ed02.js"><link rel="prefetch" href="/assets/js/71.69efcd61.js"><link rel="prefetch" href="/assets/js/72.2a4629dc.js"><link rel="prefetch" href="/assets/js/73.65039987.js"><link rel="prefetch" href="/assets/js/74.7f5ddd14.js"><link rel="prefetch" href="/assets/js/75.5435d653.js"><link rel="prefetch" href="/assets/js/76.c04f3545.js"><link rel="prefetch" href="/assets/js/77.b2f51da8.js"><link rel="prefetch" href="/assets/js/78.48bae9ca.js"><link rel="prefetch" href="/assets/js/79.1f7a4bcf.js"><link rel="prefetch" href="/assets/js/8.64895163.js"><link rel="prefetch" href="/assets/js/80.7a4c3632.js"><link rel="prefetch" href="/assets/js/81.9c33e154.js"><link rel="prefetch" href="/assets/js/82.a5cd2467.js"><link rel="prefetch" href="/assets/js/83.18d55322.js"><link rel="prefetch" href="/assets/js/84.240f6ffe.js"><link rel="prefetch" href="/assets/js/85.0a0feb37.js"><link rel="prefetch" href="/assets/js/86.b2cbc014.js"><link rel="prefetch" href="/assets/js/87.48f376d0.js"><link rel="prefetch" href="/assets/js/88.a4f5b6aa.js"><link rel="prefetch" href="/assets/js/89.94ccf916.js"><link rel="prefetch" href="/assets/js/9.fd1f933e.js"><link rel="prefetch" href="/assets/js/90.4087aaa3.js"><link rel="prefetch" href="/assets/js/91.ca3014ec.js"><link rel="prefetch" href="/assets/js/92.1b9ce60c.js"><link rel="prefetch" href="/assets/js/93.bff0d009.js"><link rel="prefetch" href="/assets/js/94.3f080522.js"><link rel="prefetch" href="/assets/js/96.16a8220f.js"><link rel="prefetch" href="/assets/js/97.3b49e726.js"><link rel="prefetch" href="/assets/js/98.0616a936.js"><link rel="prefetch" href="/assets/js/99.bda07f4a.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.6c3f82f7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ac6a33c7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-cd01cc30><div data-v-cd01cc30><div id="loader-wrapper" class="loading-wrapper" data-v-2c578df8 data-v-cd01cc30 data-v-cd01cc30><div class="loader-main" data-v-2c578df8><div data-v-2c578df8></div><div data-v-2c578df8></div><div data-v-2c578df8></div><div data-v-2c578df8></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-623c7d26 data-v-cd01cc30 data-v-cd01cc30><h3 class="title" style="display:none;" data-v-623c7d26 data-v-623c7d26>3D For Fun</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-623c7d26 data-v-623c7d26><input type="password" value="" data-v-623c7d26> <span data-v-623c7d26>Konck! Knock!</span> <button data-v-623c7d26>OK</button></label> <div class="footer" style="display:none;" data-v-623c7d26 data-v-623c7d26><span data-v-623c7d26><i class="iconfont reco-theme" data-v-623c7d26></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-623c7d26>vuePress-theme-reco</a></span> <span data-v-623c7d26><i class="iconfont reco-copyright" data-v-623c7d26></i> <a data-v-623c7d26><span data-v-623c7d26>3D-for-Fun</span>
+            
+          <span data-v-623c7d26>1990 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-cd01cc30><header class="navbar" data-v-cd01cc30><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">3D For Fun</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont undefined"></i>
+  首页
+</a></div><div class="nav-item"><a href="/categories/blog/" class="nav-link"><i class="iconfont reco-blog"></i>
+  博客
+</a></div> <a href="https://github.com/3D-for-Fun/3D-for-Fun.github.io" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask" data-v-cd01cc30></div> <aside class="sidebar" data-v-cd01cc30><div class="personal-info-wrapper" data-v-2a0ed2ae data-v-cd01cc30><img src="/head.png" alt="author-avatar" class="personal-img" data-v-2a0ed2ae> <h3 class="name" data-v-2a0ed2ae>
+    3D-for-Fun
+  </h3> <div class="num" data-v-2a0ed2ae><div data-v-2a0ed2ae><h3 data-v-2a0ed2ae>12</h3> <h6 data-v-2a0ed2ae>文章</h6></div> <div data-v-2a0ed2ae><h3 data-v-2a0ed2ae>0</h3> <h6 data-v-2a0ed2ae>标签</h6></div></div> <hr data-v-2a0ed2ae></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont undefined"></i>
+  首页
+</a></div><div class="nav-item"><a href="/categories/blog/" class="nav-link"><i class="iconfont reco-blog"></i>
+  博客
+</a></div> <a href="https://github.com/3D-for-Fun/3D-for-Fun.github.io" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-623c7d26 data-v-cd01cc30><h3 class="title" style="display:none;" data-v-623c7d26 data-v-623c7d26>(六) Materials-Basic</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-623c7d26 data-v-623c7d26><input type="password" value="" data-v-623c7d26> <span data-v-623c7d26>Konck! Knock!</span> <button data-v-623c7d26>OK</button></label> <div class="footer" style="display:none;" data-v-623c7d26 data-v-623c7d26><span data-v-623c7d26><i class="iconfont reco-theme" data-v-623c7d26></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-623c7d26>vuePress-theme-reco</a></span> <span data-v-623c7d26><i class="iconfont reco-copyright" data-v-623c7d26></i> <a data-v-623c7d26><span data-v-623c7d26>3D-for-Fun</span>
+            
+          <span data-v-623c7d26>1990 - </span>
+          2021
+        </a></span></div></div> <div data-v-cd01cc30><main class="page"><div class="page-title" style="display:none;"><h1 class="title">(六) Materials-Basic</h1> <div data-v-8bc6ae5c><i class="iconfont reco-account" data-v-8bc6ae5c><span data-v-8bc6ae5c>ue007</span></i> <i class="iconfont reco-date" data-v-8bc6ae5c><span data-v-8bc6ae5c>2021-04-25</span></i> <i class="iconfont reco-eye" data-v-8bc6ae5c><span id="/views/Blog/threejs/06-Materials-Basic.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-8bc6ae5c><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <!----></div></div> <div class="theme-reco-content content__default" style="display:none;"><h2 id="_1-概述"><a href="#_1-概述" class="header-anchor">#</a> 1. 概述</h2> <p>本文主要介绍以下内容：</p> <blockquote><ol><li>Materials有哪些?</li> <li>了解Material在渲染管线中的位置</li> <li>为什么要分出来那么多材质，一个材质不香吗？</li> <li>学习使用Material;</li> <li>学会使用Spector.js进行调试</li></ol></blockquote> <p>专栏代码地址：https://github.com/ue007/three.ts</p> <p>本文代码地址：https://github.com/ue007/three.ts/tree/main/07-Materials-BasicMaterial</p> <h2 id="_2-materials有哪些"><a href="#_2-materials有哪些" class="header-anchor">#</a> 2. Materials有哪些？</h2> <h3 id="_2-1-为什么要分那么多材质"><a href="#_2-1-为什么要分那么多材质" class="header-anchor">#</a> 2.1 为什么要分那么多材质？</h3> <p>有媳妇的，应该都知道，睡觉前，卸妆之后的媳妇，没有白天化妆之后的好看。为什么呢？这就是材质Material的作用。</p> <p><strong>Material 材质，就是一个三维物体的门面，不带有Material的物体，如同一个卸了妆的女人，能看但一定不好看。所以，我们需要给女人化妆，什么粉底、遮瑕、散粉、画眉、眼影（AO），增加立体感，还有修容、高光、腮红、口红等等步骤。</strong></p> <p><strong>说材质为什么比较难学，就在于它很类似于化妆品种类太多，试问，有几个大老爷们，能看懂女人化妆的步骤的，更何况咱们IT男同胞们呢。</strong></p> <p><strong>作为男同胞，谁都不想看卸了妆的老婆，但也不喜欢经历老婆化妆的过程，等待的煎熬，实在是痛苦。</strong></p> <p><strong>所以，材质的意义，就在于让物体看上去更好看，更适合整个场景需求，迎合今晚聚会氛围，是Party，还是KTV，还是YD。</strong></p> <p>**真实场景做真实（PBR）处理，非真实场景，做NBR处理，后期特殊处理，做IBR处理等等，大老爷们变身美少女，啥都不是事。
+**</p> <p><strong>还是男人好，化妆品，不论春夏秋冬，只有一瓶，大宝SOD蜜。</strong></p> <h3 id="_2-2-材质有哪些"><a href="#_2-2-材质有哪些" class="header-anchor">#</a> 2.2 材质有哪些？</h3> <p>材质有哪些，就像女朋友问题，这只口红是什么颜色一样烦人。我的世界里只有红橙黄绿青蓝紫，你非要我区分色号，分不清还生气，实在让人无奈。</p> <p>请问下面口红分别是什么颜色的？</p> <p><img src="https://i.loli.net/2021/04/25/vmU1Q2ePiRoOMZ9.png" alt="chrome_a1NibaiKaY.png"></p> <p>我相信，99%男性的回答是：红色的！！！</p> <p>好吧，Three.js源码中，材质包含下面多种材质，先不管它是啥，看名字一大堆，就统一理解为，化妆品吧。后面再一一分析，每个化妆品的作用，好坏。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>export { ShadowMaterial } from './ShadowMaterial.js';
+export { SpriteMaterial } from './SpriteMaterial.js';
+export { RawShaderMaterial } from './RawShaderMaterial.js';
+export { ShaderMaterial } from './ShaderMaterial.js';
+export { PointsMaterial } from './PointsMaterial.js';
+export { MeshPhysicalMaterial } from './MeshPhysicalMaterial.js';
+export { MeshStandardMaterial } from './MeshStandardMaterial.js';
+export { MeshPhongMaterial } from './MeshPhongMaterial.js';
+export { MeshToonMaterial } from './MeshToonMaterial.js';
+export { MeshNormalMaterial } from './MeshNormalMaterial.js';
+export { MeshLambertMaterial } from './MeshLambertMaterial.js';
+export { MeshDepthMaterial } from './MeshDepthMaterial.js';
+export { MeshDistanceMaterial } from './MeshDistanceMaterial.js';
+export { MeshBasicMaterial } from './MeshBasicMaterial.js';
+export { MeshMatcapMaterial } from './MeshMatcapMaterial.js';
+export { LineDashedMaterial } from './LineDashedMaterial.js';
+export { LineBasicMaterial } from './LineBasicMaterial.js';
+export { Material } from './Material.js';
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h2 id="_3-material在渲染管线中的位置"><a href="#_3-material在渲染管线中的位置" class="header-anchor">#</a> 3. Material在渲染管线中的位置</h2> <p>学习图形学，时刻不能忘记的，就是渲染管线。如同做人，时刻不能忘记的礼节、法制一样。</p> <p>记住渲染管线，每一步做了哪些事情，每一步如何做，才能最优。实际生活中，我们会有一种说法，把一件事情的每一步骤做到极致，最终的结果就是最好的。但是在渲染管线里，可不是完全这样，这就是管线的意义。</p> <p>优化图形的性能问题，就像一个通下水道马桶的过程，要保证整体是通畅的，最后才能达到通畅。话题扯远了，后期会整理性能优化的问题。</p> <p><img src="https://i.loli.net/2021/04/25/KR5PgtfFEekoLrb.png" alt="QQPCRealTimeSpeedup_4lgrDfBlMq.png"></p> <p>**
+**</p> <p><strong>Material在渲染管线中哪个位置呢？其实就是对应管线中Fragment片元处理的过程，就像拿起一直画笔，读取Material设置的参数变量（化妆品），一一涂抹的过程。</strong></p> <p><strong>下面这个图，是我自己整理的：</strong></p> <p><img src="https://i.loli.net/2021/04/25/63FqKEhT5t7fUpS.png" alt="chrome_4ZCu9Fv6Yj.png"></p> <h3 id="_3-1-material"><a href="#_3-1-material" class="header-anchor">#</a> 3.1 Material</h3> <p>一个Material，需要考虑哪些东西？</p> <p>先来看看three.js里面Material.js构造函数中的定义：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function Material() {
+
+    Object.defineProperty( this, 'id', { value: materialId ++ } );
+
+    this.uuid = MathUtils.generateUUID();
+
+    this.name = '';
+    this.type = 'Material';
+
+    this.fog = true;
+
+    this.blending = NormalBlending;
+    this.side = FrontSide;
+    this.vertexColors = false;
+
+    this.opacity = 1;
+    this.transparent = false;
+
+    this.blendSrc = SrcAlphaFactor;
+    this.blendDst = OneMinusSrcAlphaFactor;
+    this.blendEquation = AddEquation;
+    this.blendSrcAlpha = null;
+    this.blendDstAlpha = null;
+    this.blendEquationAlpha = null;
+
+    this.depthFunc = LessEqualDepth;
+    this.depthTest = true;
+    this.depthWrite = true;
+
+    this.stencilWriteMask = 0xff;
+    this.stencilFunc = AlwaysStencilFunc;
+    this.stencilRef = 0;
+    this.stencilFuncMask = 0xff;
+    this.stencilFail = KeepStencilOp;
+    this.stencilZFail = KeepStencilOp;
+    this.stencilZPass = KeepStencilOp;
+    this.stencilWrite = false;
+
+    this.clippingPlanes = null;
+    this.clipIntersection = false;
+    this.clipShadows = false;
+
+    this.shadowSide = null;
+
+    this.colorWrite = true;
+
+    this.precision = null; // override the renderer's default precision for this material
+
+    this.polygonOffset = false;
+    this.polygonOffsetFactor = 0;
+    this.polygonOffsetUnits = 0;
+
+    this.dithering = false;
+
+    this.alphaTest = 0;
+    this.alphaToCoverage = false;
+    this.premultipliedAlpha = false;
+
+    this.visible = true;
+
+    this.toneMapped = true;
+
+    this.userData = {};
+
+    this.version = 0;
+
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br></div></div><p>这些参数的控制，主要都是直接面向控制硬件的，可以归结为如下几点：</p> <ol><li>透明度控制：transparent是否启用透明度开关、opacity 透明度的值</li> <li>Buffer测试：Scissor测试、Stencil测试、Depth测试</li> <li>Blend融合：控制最终融合的参数;可以参考<a href="http://www.jiazhengblog.com/blog/2017/01/04/2989/" target="_blank" rel="noopener noreferrer">WebGL绘制详解之七：Blend<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>visible: 可见性</li> <li>side: 绘制的side控制，顺时针绘制，逆时针绘制，还是双面都绘制。</li> <li>其他控制参数：clip裁剪、polygonoffset控制等等</li></ol> <p><img src="https://i.loli.net/2021/04/25/tOf2i1doZJquEUn.png" alt="QQPCRealTimeSpeedup_kNJJKEytTZ.png"></p> <p>这些参数，对应<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext" target="_blank" rel="noopener noreferrer">WebGLRenderingContext<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>下的状态信息：</p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/activeTexture" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.activeTexture()</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>选择要激活的纹理单元。</p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/blendColor" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.blendColor()</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>设置源和目标的混和因子。</p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/blendEquation" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.blendEquation()</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>用同一个表达式设置 RGB 混和表达式和 alpha 混和表达式。<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/blendEquationSeparate" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.blendEquationSeparate()</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>分开设置 RGB 混和表达式和 alpha 混和表达式。</p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/blendFunc" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.blendFunc()</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>定义用于像素混合算法的函数。</p> <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/blendFuncSeparate" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.blendFuncSeparate()</code> (en-US)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>分别定义混合像素RGB通道和透明通道的函数。</p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/clearColor" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.clearColor()</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>设置用于清空用的颜色。</p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/clearDepth" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.clearDepth()</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>设置清除深度缓存时的深度值。</p> <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/clearStencil" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.clearStencil()</code> (en-US)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>设置清除模板缓冲区时的模板值。</p> <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/colorMask" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.colorMask()</code> (en-US)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>设置在绘制或渲染<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLFramebuffer" target="_blank" rel="noopener noreferrer"><code>WebGLFramebuffer</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>时要开启或关闭的颜色分量。<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/cullFace" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.cullFace()</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>设置多边形的正面和/或反面是否要被排除。</p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/depthFunc" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.depthFunc()</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>设置比较输入像素深度和深度缓存值得函数。</p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/depthMask" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.depthMask()</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>设置是否写入深度缓存。</p> <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/depthRange" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.depthRange()</code> (en-US)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>设置从规范化设备坐标映射到窗口或视口坐标时的深度范围。</p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/disable" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.disable()</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>禁用这个上下文的WebGL功能。</p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/enable" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.enable()</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>启用这个上下文的WebGL功能。</p> <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/frontFace" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.frontFace()</code> (en-US)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>设置多边形的正面使用顺时针还是逆时针绘制表示。</p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/getParameter" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.getParameter()</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>返回给入参数名的值。</p> <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getError" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.getError()</code> (en-US)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>返回错误信息。</p> <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/hint" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.hint()</code> (en-US)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>给某些行为设置建议使用的模式。具体建议需要看执行的情况。</p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/isEnabled" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.isEnabled()</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>测试这个上下文的WebGL功能是否开启。</p> <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/lineWidth" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.lineWidth()</code> (en-US)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>设置线宽。</p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/pixelStorei" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.pixelStorei()</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>设置像素存储模式。</p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/polygonOffset" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.polygonOffset()</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>设置多边形偏移的比例和单位，从而计算深度值。（补充：解决深度冲突）<a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/sampleCoverage" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.sampleCoverage()</code> (en-US)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>为抗锯齿效果设置多重取样覆盖参数。</p> <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/stencilFunc" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.stencilFunc()</code> (en-US)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>同时设置前面和背面的模板测试函数，及其引用值。<a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/stencilFuncSeparate" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.stencilFuncSeparate()</code> (en-US)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>可分开设置前面或背面的模板测试函数，及其引用值。<a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/stencilMask" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.stencilMask()</code> (en-US)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>同时启用或禁用，前面和背面的模板测试掩码。<a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/stencilMaskSeparate" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.stencilMaskSeparate()</code> (en-US)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>可分开启用或禁用，前面和背面的模板测试掩码。</p> <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/stencilOp" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.stencilOp()</code> (en-US)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>同时设置，在前面和背面的模板缓冲区上执行的操作。<a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/stencilOpSeparate" target="_blank" rel="noopener noreferrer"><code>WebGLRenderingContext.stencilOpSeparate()</code> (en-US)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>可分开设置，在前面和背面的模板缓冲区上执行的操作。</p> <h2 id="_4-basicmaterial"><a href="#_4-basicmaterial" class="header-anchor">#</a> 4. BasicMaterial</h2> <p>基本材质有哪些东西需要考虑？</p> <p>看看MeshBasicMaterial的构造函数定义:</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>constructor( parameters ) {
+
+        super();
+
+        this.type = 'MeshBasicMaterial';
+
+        this.color = new Color( 0xffffff ); // emissive
+
+        this.map = null;
+
+        this.lightMap = null;
+        this.lightMapIntensity = 1.0;
+
+        this.aoMap = null;
+        this.aoMapIntensity = 1.0;
+
+        this.specularMap = null;
+
+        this.alphaMap = null;
+
+        this.envMap = null;
+        this.combine = MultiplyOperation;
+        this.reflectivity = 1;
+        this.refractionRatio = 0.98;
+
+        this.wireframe = false;
+        this.wireframeLinewidth = 1;
+        this.wireframeLinecap = 'round';
+        this.wireframeLinejoin = 'round';
+
+        this.skinning = false;
+        this.morphTargets = false;
+
+        this.setValues( parameters );
+
+    }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><p>对应主要参数理解为：</p> <ol><li>type: 材质的类型，穿着布料的类型</li> <li>color: 材质的颜色，穿着布料的基本颜色</li> <li>map:  材质的贴图，穿着布料上的图片，花纹</li> <li>lightmap: 灯光贴图，物体的不同部分对光有不同反映</li> <li>aomap：环境光遮蔽体贴，就像画眼影，在一些细节支出，增加立体效果</li> <li>specularMap：高光贴图，就是一种特殊的贴图而已，打光</li> <li>envMap：环境贴图，就是整个环境在人身上的映射</li> <li>combine：就是环境光贴图与灯光之间计算的方式，有三种：add, mix，multiply，计算方式不同，最终输出结果自然不同</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>if ( parameters.envMap ) {
+
+        switch ( parameters.combine ) {
+
+            case MultiplyOperation:
+                envMapBlendingDefine = 'ENVMAP_BLENDING_MULTIPLY';
+                break;
+
+            case MixOperation:
+                envMapBlendingDefine = 'ENVMAP_BLENDING_MIX';
+                break;
+
+            case AddOperation:
+                envMapBlendingDefine = 'ENVMAP_BLENDING_ADD';
+                break;
+        }
+    }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>对应shader代码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#ifdef ENVMAP_BLENDING_MULTIPLY
+            outgoingLight = mix( outgoingLight, outgoingLight * envColor.xyz, specularStrength * reflectivity );
+            #elif defined( ENVMAP_BLENDING_MIX )
+            outgoingLight = mix( outgoingLight, envColor.xyz, specularStrength * reflectivity );
+            #elif defined( ENVMAP_BLENDING_ADD )
+            outgoingLight += envColor.xyz * specularStrength * reflectivity;
+        #endif
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>来段代码试试效果，在client.ts中加入代码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import * as THREE from 'three';
+import { Geometry } from 'three/examples/jsm/deprecated/Geometry';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import Stats from 'three/examples/jsm/libs/stats.module';
+import { GUI } from 'three/examples/jsm/libs/dat.gui.module';
+
+const scene: THREE.Scene = new THREE.Scene();
+const axesHelper = new THREE.AxesHelper(5);
+scene.add(axesHelper);
+
+const camera: THREE.PerspectiveCamera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000
+);
+
+const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+//controls.addEventListener('change', render)
+
+const boxGeometry: THREE.BoxGeometry = new THREE.BoxGeometry();
+const sphereGeometry: THREE.SphereGeometry = new THREE.SphereGeometry();
+const icosahedronGeometry: THREE.IcosahedronGeometry = new THREE.IcosahedronGeometry(
+  1,
+  0
+);
+const planeGeometry: THREE.PlaneGeometry = new THREE.PlaneGeometry();
+const torusKnotGeometry: THREE.TorusKnotGeometry = new THREE.TorusKnotGeometry();
+
+const material: THREE.MeshBasicMaterial = new THREE.MeshBasicMaterial(); //{ color: 0x00ff00, wireframe: true })
+
+const texture = new THREE.TextureLoader().load('images/grid_25.jpg');
+material.map = texture;
+
+const envTexture = new THREE.CubeTextureLoader().load([
+  'images/px_25.jpg',
+  'images/nx_25.jpg',
+  'images/py_25.jpg',
+  'images/ny_25.jpg',
+  'images/pz_25.jpg',
+  'images/nz_25.jpg',
+]);
+//envTexture.mapping = THREE.CubeReflectionMapping
+envTexture.mapping = THREE.CubeRefractionMapping;
+material.envMap = envTexture;
+
+const cube: THREE.Mesh = new THREE.Mesh(boxGeometry, material);
+cube.position.x = 5;
+scene.add(cube);
+
+const sphere: THREE.Mesh = new THREE.Mesh(sphereGeometry, material);
+sphere.position.x = 3;
+scene.add(sphere);
+
+const icosahedron: THREE.Mesh = new THREE.Mesh(icosahedronGeometry, material);
+icosahedron.position.x = 0;
+scene.add(icosahedron);
+
+const plane: THREE.Mesh = new THREE.Mesh(planeGeometry, material);
+plane.position.x = -2;
+scene.add(plane);
+
+const torusKnot: THREE.Mesh = new THREE.Mesh(torusKnotGeometry, material);
+torusKnot.position.x = -5;
+scene.add(torusKnot);
+
+camera.position.z = 3;
+
+window.addEventListener('resize', onWindowResize, false);
+function onWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  render();
+}
+
+const stats = Stats();
+document.body.appendChild(stats.dom);
+
+var options = {
+  side: {
+    FrontSide: THREE.FrontSide,
+    BackSide: THREE.BackSide,
+    DoubleSide: THREE.DoubleSide,
+  },
+  combine: {
+    MultiplyOperation: THREE.MultiplyOperation,
+    MixOperation: THREE.MixOperation,
+    AddOperation: THREE.AddOperation,
+  },
+};
+const gui = new GUI();
+
+const materialFolder = gui.addFolder('THREE.Material');
+materialFolder.add(material, 'transparent');
+materialFolder.add(material, 'opacity', 0, 1, 0.01);
+materialFolder.add(material, 'depthTest');
+materialFolder.add(material, 'depthWrite');
+materialFolder
+  .add(material, 'alphaTest', 0, 1, 0.01)
+  .onChange(() =&gt; updateMaterial());
+materialFolder.add(material, 'visible');
+materialFolder
+  .add(material, 'side', options.side)
+  .onChange(() =&gt; updateMaterial());
+materialFolder.open();
+
+var data = {
+  color: material.color.getHex(),
+};
+
+var meshBasicMaterialFolder = gui.addFolder('THREE.MeshBasicMaterial');
+meshBasicMaterialFolder.addColor(data, 'color').onChange(() =&gt; {
+  material.color.setHex(Number(data.color.toString().replace('#', '0x')));
+});
+meshBasicMaterialFolder.add(material, 'wireframe');
+//meshBasicMaterialFolder.add(material, 'wireframeLinewidth', 0, 10);
+meshBasicMaterialFolder
+  .add(material, 'combine', options.combine)
+  .onChange(() =&gt; updateMaterial());
+meshBasicMaterialFolder.add(material, 'reflectivity', 0, 1);
+meshBasicMaterialFolder.add(material, 'refractionRatio', 0, 1);
+meshBasicMaterialFolder.open();
+
+function updateMaterial() {
+  material.side = Number(material.side);
+  material.combine = Number(material.combine);
+  material.needsUpdate = true;
+}
+
+var animate = function () {
+  requestAnimationFrame(animate);
+  render();
+  stats.update();
+};
+
+function render() {
+  renderer.render(scene, camera);
+}
+animate();
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br></div></div><p>执行脚本：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm run dev
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><img src="https://i.loli.net/2021/04/25/rhuvJOlxiB4gMXL.png" alt="chrome_wXHQblqRip.png"></p> <h2 id="_5-spectorjs调试"><a href="#_5-spectorjs调试" class="header-anchor">#</a> 5. SpectorJS调试</h2> <p>我们来使用babylon的inspector.js工具，分析一下，材质最终在shader里的流程。</p> <p>首先，安装一下SpectorJS这个插件，用于chrome上的webgl调试，github地址：https://github.com/BabylonJS/Spector.js/blob/master/readme.md</p> <p>使用Spector工具，获取调试信息如图：</p> <h3 id="_5-1-information信息"><a href="#_5-1-information信息" class="header-anchor">#</a> 5.1 Information信息</h3> <p><img src="https://i.loli.net/2021/04/25/TDylfjFUbkdVc8w.png" alt="chrome_pXlbCVQIqi.png"></p> <p>主要信息有：</p> <ol><li>Canvas信息：介绍Canvas的尺寸，浏览器属性；</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>width: 1920
+height: 519
+clientWidth: 1920
+clientHeight: 519
+browserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ol><li>Context信息：介绍WebGLRenderContext的属性信息</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>Context
+version: 2
+Context Attributes
+alpha: false
+antialias: false
+depth: true
+failIfMajorPerformanceCaveat: false
+powerPreference: default
+premultipliedAlpha: true
+preserveDrawingBuffer: false
+stencil: true
+desynchronized: false
+xrCompatible: false
+Capabilities
+RENDERER: WebKit WebGL
+VENDOR: WebKit
+VERSION: WebGL 2.0 (OpenGL ES 3.0 Chromium)
+SHADING_LANGUAGE_VERSION: WebGL GLSL ES 3.00 (OpenGL ES GLSL ES 3.0 Chromium)
+SAMPLES: 0
+SAMPLE_BUFFERS: 0
+RED_BITS: 8
+GREEN_BITS: 8
+BLUE_BITS: 8
+ALPHA_BITS: 0
+DEPTH_BITS: 24
+STENCIL_BITS: 8
+SUBPIXEL_BITS: 4
+LINE_WIDTH: 1
+ALIASED_LINE_WIDTH_RANGE: 1, 1
+ALIASED_POINT_SIZE_RANGE: 1, 1024
+IMPLEMENTATION_COLOR_READ_FORMAT: RGBA
+IMPLEMENTATION_COLOR_READ_TYPE: UNSIGNED_BYTE
+MAX_COMBINED_TEXTURE_IMAGE_UNITS: 32
+MAX_CUBE_MAP_TEXTURE_SIZE: 16384
+MAX_FRAGMENT_UNIFORM_VECTORS: 1024
+MAX_RENDERBUFFER_SIZE: 16384
+MAX_TEXTURE_IMAGE_UNITS: 16
+MAX_TEXTURE_SIZE: 16384
+MAX_VARYING_VECTORS: 30
+MAX_VERTEX_ATTRIBS: 16
+MAX_VERTEX_TEXTURE_IMAGE_UNITS: 16
+MAX_VERTEX_UNIFORM_VECTORS: 4096
+MAX_VIEWPORT_DIMS: 32767, 32767
+MAX_TEXTURE_MAX_ANISOTROPY_EXT: 16
+MAX_COLOR_ATTACHMENTS_WEBGL: Extension WEBGL_draw_buffers is unavailble.
+MAX_DRAW_BUFFERS_WEBGL: Extension WEBGL_draw_buffers is unavailble.
+MAX_3D_TEXTURE_SIZE: 2048
+MAX_ARRAY_TEXTURE_LAYERS: 2048
+MAX_CLIENT_WAIT_TIMEOUT_WEBGL: 0
+MAX_COLOR_ATTACHMENTS: 8
+MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS: 200704
+MAX_COMBINED_UNIFORM_BLOCKS: 24
+MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS: 212992
+MAX_DRAW_BUFFERS: 8
+MAX_ELEMENT_INDEX: 4294967294
+MAX_ELEMENTS_INDICES: 2147483647
+MAX_ELEMENTS_VERTICES: 2147483647
+MAX_FRAGMENT_INPUT_COMPONENTS: 120
+MAX_FRAGMENT_UNIFORM_BLOCKS: 12
+MAX_FRAGMENT_UNIFORM_COMPONENTS: 4096
+MAX_PROGRAM_TEXEL_OFFSET: 7
+MAX_SAMPLES: 16
+MAX_SERVER_WAIT_TIMEOUT: 0
+MAX_TEXTURE_LOD_BIAS: 2
+MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS: 120
+MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS: 4
+MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS: 4
+MAX_UNIFORM_BLOCK_SIZE: 65536
+MAX_UNIFORM_BUFFER_BINDINGS: 24
+MAX_VARYING_COMPONENTS: 120
+MAX_VERTEX_OUTPUT_COMPONENTS: 120
+MAX_VERTEX_UNIFORM_BLOCKS: 12
+MAX_VERTEX_UNIFORM_COMPONENTS: 16384
+MIN_PROGRAM_TEXEL_OFFSET: -8
+Extensions
+EXT_color_buffer_float: true
+EXT_disjoint_timer_query: false
+EXT_disjoint_timer_query_webgl2: true
+EXT_texture_filter_anisotropic: true
+OES_texture_float_linear: true
+WEBGL_compressed_texture_astc: false
+WEBGL_compressed_texture_atc: false
+WEBGL_compressed_texture_etc: false
+WEBGL_compressed_texture_etc1: false
+WEBGL_compressed_texture_pvrtc: false
+WEBGL_compressed_texture_s3tc: true
+Compressed Textures
+COMPRESSED_TEXTURE_FORMATS: COMPRESSED_RGB_S3TC_DXT1_EXT, COMPRESSED_RGBA_S3TC_DXT1_EXT, COMPRESSED_RGBA_S3TC_DXT3_EXT, COMPRESSED_RGBA_S3TC_DXT5_EXT
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br></div></div><ol><li>Commands信息:主要调用drawElement接口的次数、切换program的次数、clear的次数、激活贴图activeTexture的次数，绑定顶点数据VAO的次数，传输uniform的次数,在分析性能的时候，这些次数的调用很有帮助，一言以蔽之，就是减少drawCall，而这些数量，就是drawCall息息相关。</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>Commands
+uniformMatrix4fv: 10
+bindVertexArray: 6
+drawElements: 4
+activeTexture: 2
+drawArrays: 2
+useProgram: 2
+clear: 1
+Commands Summary
+total: 27
+draw: 6
+clear: 1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><ol><li>Primitives：绘制点、线、面的数量，一般是性能高低的重要指标。</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>Primitives
+total: 3420
+triangles: 3414
+triangleStrip: 0
+triangleFan: 0
+lines: 6
+lineStrip: 0
+lineLoop: 0
+points: 0
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ol><li>Memory: 使用Memory的相关信息，各种Buffer的使用情况；</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>Frame Memory Changes
+Buffer: 0
+Renderbuffer: 0
+Texture2d: 0
+Texture3d: 0
+Program: 0
+Total Memory (Seconds Since Application Start: Bytes)
+Buffer
+0: 23696
+7: 30404
+Texture2d
+0: 28
+8: 6113308
+Program
+0: 25926
+7: 52207
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h3 id="_5-2-init-state"><a href="#_5-2-init-state" class="header-anchor">#</a> 5.2 Init State</h3> <p><img src="https://i.loli.net/2021/04/25/PiAMTzqVXkN9DId.png" alt="chrome_YkByk3Svon.png"></p> <p>初始化的一些状态标志；</p> <h3 id="_5-3-end-state"><a href="#_5-3-end-state" class="header-anchor">#</a> 5.3 End State</h3> <p><img src="https://i.loli.net/2021/04/25/ZNB7HEw56ork2W4.png" alt="chrome_4lxMUydbip.png"></p> <p>结束状态标志。</p> <h3 id="_5-4-commands"><a href="#_5-4-commands" class="header-anchor">#</a> 5.4 Commands</h3> <p><img src="https://i.loli.net/2021/04/25/ZXehup5YF6wr4nH.png" alt="chrome_VwT9MpL8oJ.png"></p> <p>重点就是Commands的信息，可以查看一共调用了哪些指令，每个指令对应的参数是什么，传入的attribute、uniform、Texture等数据。</p> <p><img src="https://i.loli.net/2021/04/25/T3Z6a7e8hcQOtnl.png" alt="chrome_sCPC7Eb8Jk.png"></p> <p>点击这里的材质，可以查看到具体的Vertex Shader和Fragment Shader。</p> <h3 id="_5-5-vertex-shader"><a href="#_5-5-vertex-shader" class="header-anchor">#</a> 5.5 Vertex Shader</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>#version 300 es
+#define attribute in
+#define varying out
+#define texture2D texture
+precision highp float;
+precision highp int;
+#define HIGH_PRECISION
+#define SHADER_NAME MeshBasicMaterial
+#define VERTEX_TEXTURES
+#define GAMMA_FACTOR 2
+#define MAX_BONES 0
+#define USE_MAP
+#define USE_ENVMAP
+#define ENVMAP_MODE_REFRACTION
+#define USE_UV
+#define BONE_TEXTURE
+uniform mat4 modelMatrix;
+uniform mat4 modelViewMatrix;
+uniform mat4 projectionMatrix;
+uniform mat4 viewMatrix;
+uniform mat3 normalMatrix;
+uniform vec3 cameraPosition;
+uniform bool isOrthographic;
+#ifdef USE_INSTANCING
+    attribute mat4 instanceMatrix;
+#endif
+#ifdef USE_INSTANCING_COLOR
+    attribute vec3 instanceColor;
+#endif
+attribute vec3 position;
+attribute vec3 normal;
+attribute vec2 uv;
+#ifdef USE_TANGENT
+    attribute vec4 tangent;
+#endif
+#ifdef USE_COLOR
+    attribute vec3 color;
+#endif
+#ifdef USE_MORPHTARGETS
+    attribute vec3 morphTarget0;
+    attribute vec3 morphTarget1;
+    attribute vec3 morphTarget2;
+    attribute vec3 morphTarget3;
+    #ifdef USE_MORPHNORMALS
+        attribute vec3 morphNormal0;
+        attribute vec3 morphNormal1;
+        attribute vec3 morphNormal2;
+        attribute vec3 morphNormal3;
+    #else
+        attribute vec3 morphTarget4;
+        attribute vec3 morphTarget5;
+        attribute vec3 morphTarget6;
+        attribute vec3 morphTarget7;
+    #endif
+#endif
+#ifdef USE_SKINNING
+    attribute vec4 skinIndex;
+    attribute vec4 skinWeight;
+#endif
+
+#define PI 3.141592653589793
+#define PI2 6.283185307179586
+#define PI_HALF 1.5707963267948966
+#define RECIPROCAL_PI 0.3183098861837907
+#define RECIPROCAL_PI2 0.15915494309189535
+#define EPSILON 1e-6
+#ifndef saturate
+    #define saturate(a) clamp( a, 0.0, 1.0 )
+#endif
+#define whiteComplement(a) ( 1.0 - saturate( a ) )
+float pow2( const in float x ) {
+    return x*x;
+}
+float pow3( const in float x ) {
+    return x*x*x;
+}
+float pow4( const in float x ) {
+    float x2 = x*x;
+    return x2*x2;
+}
+float average( const in vec3 color ) {
+    return dot( color, vec3( 0.3333 ) );
+}
+highp float rand( const in vec2 uv ) {
+    const highp float a = 12.9898, b = 78.233, c = 43758.5453;
+    highp float dt = dot( uv.xy, vec2( a, b ) ), sn = mod( dt, PI );
+    return fract(sin(sn) * c);
+}
+#ifdef HIGH_PRECISION
+    float precisionSafeLength( vec3 v ) {
+        return length( v );
+    }
+#else
+    float max3( vec3 v ) {
+        return max( max( v.x, v.y ), v.z );
+    }
+    float precisionSafeLength( vec3 v ) {
+        float maxComponent = max3( abs( v ) );
+        return length( v / maxComponent ) * maxComponent;
+    }
+#endif
+struct IncidentLight {
+    vec3 color;
+    vec3 direction;
+    bool visible;
+};
+struct ReflectedLight {
+    vec3 directDiffuse;
+    vec3 directSpecular;
+    vec3 indirectDiffuse;
+    vec3 indirectSpecular;
+};
+struct GeometricContext {
+    vec3 position;
+    vec3 normal;
+    vec3 viewDir;
+    #ifdef CLEARCOAT
+        vec3 clearcoatNormal;
+    #endif
+};
+vec3 transformDirection( in vec3 dir, in mat4 matrix ) {
+    return normalize( ( matrix * vec4( dir, 0.0 ) ).xyz );
+}
+vec3 inverseTransformDirection( in vec3 dir, in mat4 matrix ) {
+    return normalize( ( vec4( dir, 0.0 ) * matrix ).xyz );
+}
+vec3 projectOnPlane(in vec3 point, in vec3 pointOnPlane, in vec3 planeNormal ) {
+    float distance = dot( planeNormal, point - pointOnPlane );
+    return - distance * planeNormal + point;
+}
+float sideOfPlane( in vec3 point, in vec3 pointOnPlane, in vec3 planeNormal ) {
+    return sign( dot( point - pointOnPlane, planeNormal ) );
+}
+vec3 linePlaneIntersect( in vec3 pointOnLine, in vec3 lineDirection, in vec3 pointOnPlane, in vec3 planeNormal ) {
+    return lineDirection * ( dot( planeNormal, pointOnPlane - pointOnLine ) / dot( planeNormal, lineDirection ) ) + pointOnLine;
+}
+mat3 transposeMat3( const in mat3 m ) {
+    mat3 tmp;
+    tmp[ 0 ] = vec3( m[ 0 ].x, m[ 1 ].x, m[ 2 ].x );
+    tmp[ 1 ] = vec3( m[ 0 ].y, m[ 1 ].y, m[ 2 ].y );
+    tmp[ 2 ] = vec3( m[ 0 ].z, m[ 1 ].z, m[ 2 ].z );
+    return tmp;
+}
+float linearToRelativeLuminance( const in vec3 color ) {
+    vec3 weights = vec3( 0.2126, 0.7152, 0.0722 );
+    return dot( weights, color.rgb );
+}
+bool isPerspectiveMatrix( mat4 m ) {
+    return m[ 2 ][ 3 ] == - 1.0;
+}
+vec2 equirectUv( in vec3 dir ) {
+    float u = atan( dir.z, dir.x ) * RECIPROCAL_PI2 + 0.5;
+    float v = asin( clamp( dir.y, - 1.0, 1.0 ) ) * RECIPROCAL_PI + 0.5;
+    return vec2( u, v );
+}
+#ifdef USE_UV
+    #ifdef UVS_VERTEX_ONLY
+        vec2 vUv;
+    #else
+        varying vec2 vUv;
+    #endif
+    uniform mat3 uvTransform;
+#endif
+#if defined( USE_LIGHTMAP ) || defined( USE_AOMAP )
+    attribute vec2 uv2;
+    varying vec2 vUv2;
+    uniform mat3 uv2Transform;
+#endif
+#ifdef USE_ENVMAP
+    #if defined( USE_BUMPMAP ) || defined( USE_NORMALMAP ) ||defined( PHONG )
+        #define ENV_WORLDPOS
+    #endif
+    #ifdef ENV_WORLDPOS
+        
+        varying vec3 vWorldPosition;
+    #else
+        varying vec3 vReflect;
+        uniform float refractionRatio;
+    #endif
+#endif
+#if defined( USE_COLOR ) || defined( USE_INSTANCING_COLOR )
+    varying vec3 vColor;
+#endif
+#ifdef USE_FOG
+    varying float fogDepth;
+#endif
+#ifdef USE_MORPHTARGETS
+    uniform float morphTargetBaseInfluence;
+    #ifndef USE_MORPHNORMALS
+        uniform float morphTargetInfluences[ 8 ];
+    #else
+        uniform float morphTargetInfluences[ 4 ];
+    #endif
+#endif
+#ifdef USE_SKINNING
+    uniform mat4 bindMatrix;
+    uniform mat4 bindMatrixInverse;
+    #ifdef BONE_TEXTURE
+        uniform highp sampler2D boneTexture;
+        uniform int boneTextureSize;
+        mat4 getBoneMatrix( const in float i ) {
+            float j = i * 4.0;
+            float x = mod( j, float( boneTextureSize ) );
+            float y = floor( j / float( boneTextureSize ) );
+            float dx = 1.0 / float( boneTextureSize );
+            float dy = 1.0 / float( boneTextureSize );
+            y = dy * ( y + 0.5 );
+            vec4 v1 = texture2D( boneTexture, vec2( dx * ( x + 0.5 ), y ) );
+            vec4 v2 = texture2D( boneTexture, vec2( dx * ( x + 1.5 ), y ) );
+            vec4 v3 = texture2D( boneTexture, vec2( dx * ( x + 2.5 ), y ) );
+            vec4 v4 = texture2D( boneTexture, vec2( dx * ( x + 3.5 ), y ) );
+            mat4 bone = mat4( v1, v2, v3, v4 );
+            return bone;
+        }
+    #else
+        uniform mat4 boneMatrices[ MAX_BONES ];
+        mat4 getBoneMatrix( const in float i ) {
+            mat4 bone = boneMatrices[ int(i) ];
+            return bone;
+        }
+    #endif
+#endif
+#ifdef USE_LOGDEPTHBUF
+    #ifdef USE_LOGDEPTHBUF_EXT
+        varying float vFragDepth;
+        varying float vIsPerspective;
+    #else
+        uniform float logDepthBufFC;
+    #endif
+#endif
+#if 0 &gt; 0
+    varying vec3 vClipPosition;
+#endif
+void main() {
+    #ifdef USE_UV
+        vUv = ( uvTransform * vec3( uv, 1 ) ).xy;
+    #endif
+    #if defined( USE_LIGHTMAP ) || defined( USE_AOMAP )
+        vUv2 = ( uv2Transform * vec3( uv2, 1 ) ).xy;
+    #endif
+    #if defined( USE_COLOR ) || defined( USE_INSTANCING_COLOR )
+        vColor = vec3( 1.0 );
+    #endif
+    #ifdef USE_COLOR
+        vColor.xyz *= color.xyz;
+    #endif
+    #ifdef USE_INSTANCING_COLOR
+        vColor.xyz *= instanceColor.xyz;
+    #endif
+    #ifdef USE_SKINNING
+        mat4 boneMatX = getBoneMatrix( skinIndex.x );
+        mat4 boneMatY = getBoneMatrix( skinIndex.y );
+        mat4 boneMatZ = getBoneMatrix( skinIndex.z );
+        mat4 boneMatW = getBoneMatrix( skinIndex.w );
+    #endif
+    #ifdef USE_ENVMAP
+        vec3 objectNormal = vec3( normal );
+        #ifdef USE_TANGENT
+            vec3 objectTangent = vec3( tangent.xyz );
+        #endif
+        #ifdef USE_MORPHNORMALS
+            objectNormal *= morphTargetBaseInfluence;
+            objectNormal += morphNormal0 * morphTargetInfluences[ 0 ];
+            objectNormal += morphNormal1 * morphTargetInfluences[ 1 ];
+            objectNormal += morphNormal2 * morphTargetInfluences[ 2 ];
+            objectNormal += morphNormal3 * morphTargetInfluences[ 3 ];
+        #endif
+        #ifdef USE_SKINNING
+            mat4 skinMatrix = mat4( 0.0 );
+            skinMatrix += skinWeight.x * boneMatX;
+            skinMatrix += skinWeight.y * boneMatY;
+            skinMatrix += skinWeight.z * boneMatZ;
+            skinMatrix += skinWeight.w * boneMatW;
+            skinMatrix = bindMatrixInverse * skinMatrix * bindMatrix;
+            objectNormal = vec4( skinMatrix * vec4( objectNormal, 0.0 ) ).xyz;
+            #ifdef USE_TANGENT
+                objectTangent = vec4( skinMatrix * vec4( objectTangent, 0.0 ) ).xyz;
+            #endif
+        #endif
+        vec3 transformedNormal = objectNormal;
+        #ifdef USE_INSTANCING
+            mat3 m = mat3( instanceMatrix );
+            transformedNormal /= vec3( dot( m[ 0 ], m[ 0 ] ), dot( m[ 1 ], m[ 1 ] ), dot( m[ 2 ], m[ 2 ] ) );
+            transformedNormal = m * transformedNormal;
+        #endif
+        transformedNormal = normalMatrix * transformedNormal;
+        #ifdef FLIP_SIDED
+            transformedNormal = - transformedNormal;
+        #endif
+        #ifdef USE_TANGENT
+            vec3 transformedTangent = ( modelViewMatrix * vec4( objectTangent, 0.0 ) ).xyz;
+            #ifdef FLIP_SIDED
+                transformedTangent = - transformedTangent;
+            #endif
+        #endif
+    #endif
+    vec3 transformed = vec3( position );
+    #ifdef USE_MORPHTARGETS
+        transformed *= morphTargetBaseInfluence;
+        transformed += morphTarget0 * morphTargetInfluences[ 0 ];
+        transformed += morphTarget1 * morphTargetInfluences[ 1 ];
+        transformed += morphTarget2 * morphTargetInfluences[ 2 ];
+        transformed += morphTarget3 * morphTargetInfluences[ 3 ];
+        #ifndef USE_MORPHNORMALS
+            transformed += morphTarget4 * morphTargetInfluences[ 4 ];
+            transformed += morphTarget5 * morphTargetInfluences[ 5 ];
+            transformed += morphTarget6 * morphTargetInfluences[ 6 ];
+            transformed += morphTarget7 * morphTargetInfluences[ 7 ];
+        #endif
+    #endif
+    #ifdef USE_SKINNING
+        vec4 skinVertex = bindMatrix * vec4( transformed, 1.0 );
+        vec4 skinned = vec4( 0.0 );
+        skinned += boneMatX * skinVertex * skinWeight.x;
+        skinned += boneMatY * skinVertex * skinWeight.y;
+        skinned += boneMatZ * skinVertex * skinWeight.z;
+        skinned += boneMatW * skinVertex * skinWeight.w;
+        transformed = ( bindMatrixInverse * skinned ).xyz;
+    #endif
+    vec4 mvPosition = vec4( transformed, 1.0 );
+    #ifdef USE_INSTANCING
+        mvPosition = instanceMatrix * mvPosition;
+    #endif
+    mvPosition = modelViewMatrix * mvPosition;
+    gl_Position = projectionMatrix * mvPosition;
+    #ifdef USE_LOGDEPTHBUF
+        #ifdef USE_LOGDEPTHBUF_EXT
+            vFragDepth = 1.0 + gl_Position.w;
+            vIsPerspective = float( isPerspectiveMatrix( projectionMatrix ) );
+        #else
+            if ( isPerspectiveMatrix( projectionMatrix ) ) {
+                gl_Position.z = log2( max( EPSILON, gl_Position.w + 1.0 ) ) * logDepthBufFC - 1.0;
+                gl_Position.z *= gl_Position.w;
+            }
+        #endif
+    #endif
+    #if defined( USE_ENVMAP ) || defined( DISTANCE ) || defined ( USE_SHADOWMAP )
+        vec4 worldPosition = vec4( transformed, 1.0 );
+        #ifdef USE_INSTANCING
+            worldPosition = instanceMatrix * worldPosition;
+        #endif
+        worldPosition = modelMatrix * worldPosition;
+    #endif
+    #if 0 &gt; 0
+        vClipPosition = - mvPosition.xyz;
+    #endif
+    #ifdef USE_ENVMAP
+        #ifdef ENV_WORLDPOS
+            vWorldPosition = worldPosition.xyz;
+        #else
+            vec3 cameraToVertex;
+            if ( isOrthographic ) {
+                cameraToVertex = normalize( vec3( - viewMatrix[ 0 ][ 2 ], - viewMatrix[ 1 ][ 2 ], - viewMatrix[ 2 ][ 2 ] ) );
+            }
+            else {
+                cameraToVertex = normalize( worldPosition.xyz - cameraPosition );
+            }
+            vec3 worldNormal = inverseTransformDirection( transformedNormal, viewMatrix );
+            #ifdef ENVMAP_MODE_REFLECTION
+                vReflect = reflect( cameraToVertex, worldNormal );
+            #else
+                vReflect = refract( cameraToVertex, worldNormal, refractionRatio );
+            #endif
+        #endif
+    #endif
+    #ifdef USE_FOG
+        fogDepth = - mvPosition.z;
+    #endif
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br><span class="line-number">278</span><br><span class="line-number">279</span><br><span class="line-number">280</span><br><span class="line-number">281</span><br><span class="line-number">282</span><br><span class="line-number">283</span><br><span class="line-number">284</span><br><span class="line-number">285</span><br><span class="line-number">286</span><br><span class="line-number">287</span><br><span class="line-number">288</span><br><span class="line-number">289</span><br><span class="line-number">290</span><br><span class="line-number">291</span><br><span class="line-number">292</span><br><span class="line-number">293</span><br><span class="line-number">294</span><br><span class="line-number">295</span><br><span class="line-number">296</span><br><span class="line-number">297</span><br><span class="line-number">298</span><br><span class="line-number">299</span><br><span class="line-number">300</span><br><span class="line-number">301</span><br><span class="line-number">302</span><br><span class="line-number">303</span><br><span class="line-number">304</span><br><span class="line-number">305</span><br><span class="line-number">306</span><br><span class="line-number">307</span><br><span class="line-number">308</span><br><span class="line-number">309</span><br><span class="line-number">310</span><br><span class="line-number">311</span><br><span class="line-number">312</span><br><span class="line-number">313</span><br><span class="line-number">314</span><br><span class="line-number">315</span><br><span class="line-number">316</span><br><span class="line-number">317</span><br><span class="line-number">318</span><br><span class="line-number">319</span><br><span class="line-number">320</span><br><span class="line-number">321</span><br><span class="line-number">322</span><br><span class="line-number">323</span><br><span class="line-number">324</span><br><span class="line-number">325</span><br><span class="line-number">326</span><br><span class="line-number">327</span><br><span class="line-number">328</span><br><span class="line-number">329</span><br><span class="line-number">330</span><br><span class="line-number">331</span><br><span class="line-number">332</span><br><span class="line-number">333</span><br><span class="line-number">334</span><br><span class="line-number">335</span><br><span class="line-number">336</span><br><span class="line-number">337</span><br><span class="line-number">338</span><br><span class="line-number">339</span><br><span class="line-number">340</span><br><span class="line-number">341</span><br><span class="line-number">342</span><br><span class="line-number">343</span><br><span class="line-number">344</span><br><span class="line-number">345</span><br><span class="line-number">346</span><br><span class="line-number">347</span><br><span class="line-number">348</span><br><span class="line-number">349</span><br><span class="line-number">350</span><br><span class="line-number">351</span><br><span class="line-number">352</span><br><span class="line-number">353</span><br><span class="line-number">354</span><br><span class="line-number">355</span><br><span class="line-number">356</span><br><span class="line-number">357</span><br><span class="line-number">358</span><br><span class="line-number">359</span><br><span class="line-number">360</span><br><span class="line-number">361</span><br><span class="line-number">362</span><br><span class="line-number">363</span><br><span class="line-number">364</span><br><span class="line-number">365</span><br><span class="line-number">366</span><br><span class="line-number">367</span><br><span class="line-number">368</span><br><span class="line-number">369</span><br></div></div><h3 id="_5-6-fragment-shader"><a href="#_5-6-fragment-shader" class="header-anchor">#</a> 5.6 Fragment Shader</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>#version 300 es
+#define varying in
+out highp vec4 pc_fragColor;
+#define gl_FragColor pc_fragColor
+#define gl_FragDepthEXT gl_FragDepth
+#define texture2D texture
+#define textureCube texture
+#define texture2DProj textureProj
+#define texture2DLodEXT textureLod
+#define texture2DProjLodEXT textureProjLod
+#define textureCubeLodEXT textureLod
+#define texture2DGradEXT textureGrad
+#define texture2DProjGradEXT textureProjGrad
+#define textureCubeGradEXT textureGrad
+precision highp float;
+precision highp int;
+#define HIGH_PRECISION
+#define SHADER_NAME MeshBasicMaterial
+#define GAMMA_FACTOR 2
+#define USE_MAP
+#define USE_ENVMAP
+#define ENVMAP_TYPE_CUBE
+#define ENVMAP_MODE_REFRACTION
+#define ENVMAP_BLENDING_MULTIPLY
+#define USE_UV
+#define TEXTURE_LOD_EXT
+uniform mat4 viewMatrix;
+uniform vec3 cameraPosition;
+uniform bool isOrthographic;
+vec4 LinearToLinear( in vec4 value ) {
+    return value;
+}
+vec4 GammaToLinear( in vec4 value, in float gammaFactor ) {
+    return vec4( pow( value.rgb, vec3( gammaFactor ) ), value.a );
+}
+vec4 LinearToGamma( in vec4 value, in float gammaFactor ) {
+    return vec4( pow( value.rgb, vec3( 1.0 / gammaFactor ) ), value.a );
+}
+vec4 sRGBToLinear( in vec4 value ) {
+    return vec4( mix( pow( value.rgb * 0.9478672986 + vec3( 0.0521327014 ), vec3( 2.4 ) ), value.rgb * 0.0773993808, vec3( lessThanEqual( value.rgb, vec3( 0.04045 ) ) ) ), value.a );
+}
+vec4 LinearTosRGB( in vec4 value ) {
+    return vec4( mix( pow( value.rgb, vec3( 0.41666 ) ) * 1.055 - vec3( 0.055 ), value.rgb * 12.92, vec3( lessThanEqual( value.rgb, vec3( 0.0031308 ) ) ) ), value.a );
+}
+vec4 RGBEToLinear( in vec4 value ) {
+    return vec4( value.rgb * exp2( value.a * 255.0 - 128.0 ), 1.0 );
+}
+vec4 LinearToRGBE( in vec4 value ) {
+    float maxComponent = max( max( value.r, value.g ), value.b );
+    float fExp = clamp( ceil( log2( maxComponent ) ), -128.0, 127.0 );
+    return vec4( value.rgb / exp2( fExp ), ( fExp + 128.0 ) / 255.0 );
+}
+vec4 RGBMToLinear( in vec4 value, in float maxRange ) {
+    return vec4( value.rgb * value.a * maxRange, 1.0 );
+}
+vec4 LinearToRGBM( in vec4 value, in float maxRange ) {
+    float maxRGB = max( value.r, max( value.g, value.b ) );
+    float M = clamp( maxRGB / maxRange, 0.0, 1.0 );
+    M = ceil( M * 255.0 ) / 255.0;
+    return vec4( value.rgb / ( M * maxRange ), M );
+}
+vec4 RGBDToLinear( in vec4 value, in float maxRange ) {
+    return vec4( value.rgb * ( ( maxRange / 255.0 ) / value.a ), 1.0 );
+}
+vec4 LinearToRGBD( in vec4 value, in float maxRange ) {
+    float maxRGB = max( value.r, max( value.g, value.b ) );
+    float D = max( maxRange / maxRGB, 1.0 );
+    D = clamp( floor( D ) / 255.0, 0.0, 1.0 );
+    return vec4( value.rgb * ( D * ( 255.0 / maxRange ) ), D );
+}
+const mat3 cLogLuvM = mat3( 0.2209, 0.3390, 0.4184, 0.1138, 0.6780, 0.7319, 0.0102, 0.1130, 0.2969 );
+vec4 LinearToLogLuv( in vec4 value ) {
+    vec3 Xp_Y_XYZp = cLogLuvM * value.rgb;
+    Xp_Y_XYZp = max( Xp_Y_XYZp, vec3( 1e-6, 1e-6, 1e-6 ) );
+    vec4 vResult;
+    vResult.xy = Xp_Y_XYZp.xy / Xp_Y_XYZp.z;
+    float Le = 2.0 * log2(Xp_Y_XYZp.y) + 127.0;
+    vResult.w = fract( Le );
+    vResult.z = ( Le - ( floor( vResult.w * 255.0 ) ) / 255.0 ) / 255.0;
+    return vResult;
+}
+const mat3 cLogLuvInverseM = mat3( 6.0014, -2.7008, -1.7996, -1.3320, 3.1029, -5.7721, 0.3008, -1.0882, 5.6268 );
+vec4 LogLuvToLinear( in vec4 value ) {
+    float Le = value.z * 255.0 + value.w;
+    vec3 Xp_Y_XYZp;
+    Xp_Y_XYZp.y = exp2( ( Le - 127.0 ) / 2.0 );
+    Xp_Y_XYZp.z = Xp_Y_XYZp.y / value.y;
+    Xp_Y_XYZp.x = value.x * Xp_Y_XYZp.z;
+    vec3 vRGB = cLogLuvInverseM * Xp_Y_XYZp.rgb;
+    return vec4( max( vRGB, 0.0 ), 1.0 );
+}
+vec4 mapTexelToLinear( vec4 value ) {
+    return LinearToLinear( value );
+}
+vec4 envMapTexelToLinear( vec4 value ) {
+    return LinearToLinear( value );
+}
+vec4 linearToOutputTexel( vec4 value ) {
+    return LinearToLinear( value );
+}
+uniform vec3 diffuse;
+uniform float opacity;
+#ifndef FLAT_SHADED
+    varying vec3 vNormal;
+#endif
+#define PI 3.141592653589793
+#define PI2 6.283185307179586
+#define PI_HALF 1.5707963267948966
+#define RECIPROCAL_PI 0.3183098861837907
+#define RECIPROCAL_PI2 0.15915494309189535
+#define EPSILON 1e-6
+#ifndef saturate
+    #define saturate(a) clamp( a, 0.0, 1.0 )
+#endif
+#define whiteComplement(a) ( 1.0 - saturate( a ) )
+float pow2( const in float x ) {
+    return x*x;
+}
+float pow3( const in float x ) {
+    return x*x*x;
+}
+float pow4( const in float x ) {
+    float x2 = x*x;
+    return x2*x2;
+}
+float average( const in vec3 color ) {
+    return dot( color, vec3( 0.3333 ) );
+}
+highp float rand( const in vec2 uv ) {
+    const highp float a = 12.9898, b = 78.233, c = 43758.5453;
+    highp float dt = dot( uv.xy, vec2( a, b ) ), sn = mod( dt, PI );
+    return fract(sin(sn) * c);
+}
+#ifdef HIGH_PRECISION
+    float precisionSafeLength( vec3 v ) {
+        return length( v );
+    }
+#else
+    float max3( vec3 v ) {
+        return max( max( v.x, v.y ), v.z );
+    }
+    float precisionSafeLength( vec3 v ) {
+        float maxComponent = max3( abs( v ) );
+        return length( v / maxComponent ) * maxComponent;
+    }
+#endif
+struct IncidentLight {
+    vec3 color;
+    vec3 direction;
+    bool visible;
+};
+struct ReflectedLight {
+    vec3 directDiffuse;
+    vec3 directSpecular;
+    vec3 indirectDiffuse;
+    vec3 indirectSpecular;
+};
+struct GeometricContext {
+    vec3 position;
+    vec3 normal;
+    vec3 viewDir;
+    #ifdef CLEARCOAT
+        vec3 clearcoatNormal;
+    #endif
+};
+vec3 transformDirection( in vec3 dir, in mat4 matrix ) {
+    return normalize( ( matrix * vec4( dir, 0.0 ) ).xyz );
+}
+vec3 inverseTransformDirection( in vec3 dir, in mat4 matrix ) {
+    return normalize( ( vec4( dir, 0.0 ) * matrix ).xyz );
+}
+vec3 projectOnPlane(in vec3 point, in vec3 pointOnPlane, in vec3 planeNormal ) {
+    float distance = dot( planeNormal, point - pointOnPlane );
+    return - distance * planeNormal + point;
+}
+float sideOfPlane( in vec3 point, in vec3 pointOnPlane, in vec3 planeNormal ) {
+    return sign( dot( point - pointOnPlane, planeNormal ) );
+}
+vec3 linePlaneIntersect( in vec3 pointOnLine, in vec3 lineDirection, in vec3 pointOnPlane, in vec3 planeNormal ) {
+    return lineDirection * ( dot( planeNormal, pointOnPlane - pointOnLine ) / dot( planeNormal, lineDirection ) ) + pointOnLine;
+}
+mat3 transposeMat3( const in mat3 m ) {
+    mat3 tmp;
+    tmp[ 0 ] = vec3( m[ 0 ].x, m[ 1 ].x, m[ 2 ].x );
+    tmp[ 1 ] = vec3( m[ 0 ].y, m[ 1 ].y, m[ 2 ].y );
+    tmp[ 2 ] = vec3( m[ 0 ].z, m[ 1 ].z, m[ 2 ].z );
+    return tmp;
+}
+float linearToRelativeLuminance( const in vec3 color ) {
+    vec3 weights = vec3( 0.2126, 0.7152, 0.0722 );
+    return dot( weights, color.rgb );
+}
+bool isPerspectiveMatrix( mat4 m ) {
+    return m[ 2 ][ 3 ] == - 1.0;
+}
+vec2 equirectUv( in vec3 dir ) {
+    float u = atan( dir.z, dir.x ) * RECIPROCAL_PI2 + 0.5;
+    float v = asin( clamp( dir.y, - 1.0, 1.0 ) ) * RECIPROCAL_PI + 0.5;
+    return vec2( u, v );
+}
+#ifdef DITHERING
+    vec3 dithering( vec3 color ) {
+        float grid_position = rand( gl_FragCoord.xy );
+        vec3 dither_shift_RGB = vec3( 0.25 / 255.0, -0.25 / 255.0, 0.25 / 255.0 );
+        dither_shift_RGB = mix( 2.0 * dither_shift_RGB, -2.0 * dither_shift_RGB, grid_position );
+        return color + dither_shift_RGB;
+    }
+#endif
+#ifdef USE_COLOR
+    varying vec3 vColor;
+#endif
+#if ( defined( USE_UV ) &amp;&amp; ! defined( UVS_VERTEX_ONLY ) )
+    varying vec2 vUv;
+#endif
+#if defined( USE_LIGHTMAP ) || defined( USE_AOMAP )
+    varying vec2 vUv2;
+#endif
+#ifdef USE_MAP
+    uniform sampler2D map;
+#endif
+#ifdef USE_ALPHAMAP
+    uniform sampler2D alphaMap;
+#endif
+#ifdef USE_AOMAP
+    uniform sampler2D aoMap;
+    uniform float aoMapIntensity;
+#endif
+#ifdef USE_LIGHTMAP
+    uniform sampler2D lightMap;
+    uniform float lightMapIntensity;
+#endif
+#ifdef USE_ENVMAP
+    uniform float envMapIntensity;
+    uniform float flipEnvMap;
+    uniform int maxMipLevel;
+    #ifdef ENVMAP_TYPE_CUBE
+        uniform samplerCube envMap;
+    #else
+        uniform sampler2D envMap;
+    #endif
+    
+#endif
+#ifdef USE_ENVMAP
+    uniform float reflectivity;
+    #if defined( USE_BUMPMAP ) || defined( USE_NORMALMAP ) || defined( PHONG )
+        #define ENV_WORLDPOS
+    #endif
+    #ifdef ENV_WORLDPOS
+        varying vec3 vWorldPosition;
+        uniform float refractionRatio;
+    #else
+        varying vec3 vReflect;
+    #endif
+#endif
+#ifdef ENVMAP_TYPE_CUBE_UV
+    #define cubeUV_maxMipLevel 8.0
+    #define cubeUV_minMipLevel 4.0
+    #define cubeUV_maxTileSize 256.0
+    #define cubeUV_minTileSize 16.0
+    float getFace( vec3 direction ) {
+        vec3 absDirection = abs( direction );
+        float face = - 1.0;
+        if ( absDirection.x &gt; absDirection.z ) {
+            if ( absDirection.x &gt; absDirection.y )
+            face = direction.x &gt; 0.0 ? 0.0 : 3.0;
+            else
+            face = direction.y &gt; 0.0 ? 1.0 : 4.0;
+        }
+        else {
+            if ( absDirection.z &gt; absDirection.y )
+            face = direction.z &gt; 0.0 ? 2.0 : 5.0;
+            else
+            face = direction.y &gt; 0.0 ? 1.0 : 4.0;
+        }
+        return face;
+    }
+    vec2 getUV( vec3 direction, float face ) {
+        vec2 uv;
+        if ( face == 0.0 ) {
+            uv = vec2( direction.z, direction.y ) / abs( direction.x );
+        }
+        else if ( face == 1.0 ) {
+            uv = vec2( - direction.x, - direction.z ) / abs( direction.y );
+        }
+        else if ( face == 2.0 ) {
+            uv = vec2( - direction.x, direction.y ) / abs( direction.z );
+        }
+        else if ( face == 3.0 ) {
+            uv = vec2( - direction.z, direction.y ) / abs( direction.x );
+        }
+        else if ( face == 4.0 ) {
+            uv = vec2( - direction.x, direction.z ) / abs( direction.y );
+        }
+        else {
+            uv = vec2( direction.x, direction.y ) / abs( direction.z );
+        }
+        return 0.5 * ( uv + 1.0 );
+    }
+    vec3 bilinearCubeUV( sampler2D envMap, vec3 direction, float mipInt ) {
+        float face = getFace( direction );
+        float filterInt = max( cubeUV_minMipLevel - mipInt, 0.0 );
+        mipInt = max( mipInt, cubeUV_minMipLevel );
+        float faceSize = exp2( mipInt );
+        float texelSize = 1.0 / ( 3.0 * cubeUV_maxTileSize );
+        vec2 uv = getUV( direction, face ) * ( faceSize - 1.0 );
+        vec2 f = fract( uv );
+        uv += 0.5 - f;
+        if ( face &gt; 2.0 ) {
+            uv.y += faceSize;
+            face -= 3.0;
+        }
+        uv.x += face * faceSize;
+        if ( mipInt &lt; cubeUV_maxMipLevel ) {
+            uv.y += 2.0 * cubeUV_maxTileSize;
+        }
+        uv.y += filterInt * 2.0 * cubeUV_minTileSize;
+        uv.x += 3.0 * max( 0.0, cubeUV_maxTileSize - 2.0 * faceSize );
+        uv *= texelSize;
+        vec3 tl = envMapTexelToLinear( texture2D( envMap, uv ) ).rgb;
+        uv.x += texelSize;
+        vec3 tr = envMapTexelToLinear( texture2D( envMap, uv ) ).rgb;
+        uv.y += texelSize;
+        vec3 br = envMapTexelToLinear( texture2D( envMap, uv ) ).rgb;
+        uv.x -= texelSize;
+        vec3 bl = envMapTexelToLinear( texture2D( envMap, uv ) ).rgb;
+        vec3 tm = mix( tl, tr, f.x );
+        vec3 bm = mix( bl, br, f.x );
+        return mix( tm, bm, f.y );
+    }
+    #define r0 1.0
+    #define v0 0.339
+    #define m0 - 2.0
+    #define r1 0.8
+    #define v1 0.276
+    #define m1 - 1.0
+    #define r4 0.4
+    #define v4 0.046
+    #define m4 2.0
+    #define r5 0.305
+    #define v5 0.016
+    #define m5 3.0
+    #define r6 0.21
+    #define v6 0.0038
+    #define m6 4.0
+    float roughnessToMip( float roughness ) {
+        float mip = 0.0;
+        if ( roughness &gt;= r1 ) {
+            mip = ( r0 - roughness ) * ( m1 - m0 ) / ( r0 - r1 ) + m0;
+        }
+        else if ( roughness &gt;= r4 ) {
+            mip = ( r1 - roughness ) * ( m4 - m1 ) / ( r1 - r4 ) + m1;
+        }
+        else if ( roughness &gt;= r5 ) {
+            mip = ( r4 - roughness ) * ( m5 - m4 ) / ( r4 - r5 ) + m4;
+        }
+        else if ( roughness &gt;= r6 ) {
+            mip = ( r5 - roughness ) * ( m6 - m5 ) / ( r5 - r6 ) + m5;
+        }
+        else {
+            mip = - 2.0 * log2( 1.16 * roughness );
+        }
+        return mip;
+    }
+    vec4 textureCubeUV( sampler2D envMap, vec3 sampleDir, float roughness ) {
+        float mip = clamp( roughnessToMip( roughness ), m0, cubeUV_maxMipLevel );
+        float mipF = fract( mip );
+        float mipInt = floor( mip );
+        vec3 color0 = bilinearCubeUV( envMap, sampleDir, mipInt );
+        if ( mipF == 0.0 ) {
+            return vec4( color0, 1.0 );
+        }
+        else {
+            vec3 color1 = bilinearCubeUV( envMap, sampleDir, mipInt + 1.0 );
+            return vec4( mix( color0, color1, mipF ), 1.0 );
+        }
+    
+    }
+#endif
+#ifdef USE_FOG
+    uniform vec3 fogColor;
+    varying float fogDepth;
+    #ifdef FOG_EXP2
+        uniform float fogDensity;
+    #else
+        uniform float fogNear;
+        uniform float fogFar;
+    #endif
+#endif
+#ifdef USE_SPECULARMAP
+    uniform sampler2D specularMap;
+#endif
+#if defined( USE_LOGDEPTHBUF ) &amp;&amp; defined( USE_LOGDEPTHBUF_EXT )
+    uniform float logDepthBufFC;
+    varying float vFragDepth;
+    varying float vIsPerspective;
+#endif
+#if 0 &gt; 0
+    varying vec3 vClipPosition;
+    uniform vec4 clippingPlanes[ 0 ];
+#endif
+void main() {
+    #if 0 &gt; 0
+        vec4 plane;
+        #if 0 &lt; 0
+            bool clipped = true;
+            if ( clipped ) discard;
+        #endif
+    #endif
+    vec4 diffuseColor = vec4( diffuse, opacity );
+    #if defined( USE_LOGDEPTHBUF ) &amp;&amp; defined( USE_LOGDEPTHBUF_EXT )
+        gl_FragDepthEXT = vIsPerspective == 0.0 ? gl_FragCoord.z : log2( vFragDepth ) * logDepthBufFC * 0.5;
+    #endif
+    #ifdef USE_MAP
+        vec4 texelColor = texture2D( map, vUv );
+        texelColor = mapTexelToLinear( texelColor );
+        diffuseColor *= texelColor;
+    #endif
+    #ifdef USE_COLOR
+        diffuseColor.rgb *= vColor;
+    #endif
+    #ifdef USE_ALPHAMAP
+        diffuseColor.a *= texture2D( alphaMap, vUv ).g;
+    #endif
+    #ifdef ALPHATEST
+        if ( diffuseColor.a &lt; ALPHATEST ) discard;
+    #endif
+    float specularStrength;
+    #ifdef USE_SPECULARMAP
+        vec4 texelSpecular = texture2D( specularMap, vUv );
+        specularStrength = texelSpecular.r;
+    #else
+        specularStrength = 1.0;
+    #endif
+    ReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );
+    #ifdef USE_LIGHTMAP
+        
+        vec4 lightMapTexel = texture2D( lightMap, vUv2 );
+        reflectedLight.indirectDiffuse += lightMapTexelToLinear( lightMapTexel ).rgb * lightMapIntensity;
+    #else
+        reflectedLight.indirectDiffuse += vec3( 1.0 );
+    #endif
+    #ifdef USE_AOMAP
+        float ambientOcclusion = ( texture2D( aoMap, vUv2 ).r - 1.0 ) * aoMapIntensity + 1.0;
+        reflectedLight.indirectDiffuse *= ambientOcclusion;
+        #if defined( USE_ENVMAP ) &amp;&amp; defined( STANDARD )
+            float dotNV = saturate( dot( geometry.normal, geometry.viewDir ) );
+            reflectedLight.indirectSpecular *= computeSpecularOcclusion( dotNV, ambientOcclusion, material.specularRoughness );
+        #endif
+    #endif
+    reflectedLight.indirectDiffuse *= diffuseColor.rgb;
+    vec3 outgoingLight = reflectedLight.indirectDiffuse;
+    #ifdef USE_ENVMAP
+        #ifdef ENV_WORLDPOS
+            vec3 cameraToFrag;
+            if ( isOrthographic ) {
+                cameraToFrag = normalize( vec3( - viewMatrix[ 0 ][ 2 ], - viewMatrix[ 1 ][ 2 ], - viewMatrix[ 2 ][ 2 ] ) );
+            }
+            else {
+                cameraToFrag = normalize( vWorldPosition - cameraPosition );
+            }
+            vec3 worldNormal = inverseTransformDirection( normal, viewMatrix );
+            #ifdef ENVMAP_MODE_REFLECTION
+                vec3 reflectVec = reflect( cameraToFrag, worldNormal );
+            #else
+                vec3 reflectVec = refract( cameraToFrag, worldNormal, refractionRatio );
+            #endif
+        #else
+            vec3 reflectVec = vReflect;
+        #endif
+        #ifdef ENVMAP_TYPE_CUBE
+            vec4 envColor = textureCube( envMap, vec3( flipEnvMap * reflectVec.x, reflectVec.yz ) );
+            #elif defined( ENVMAP_TYPE_CUBE_UV )
+            vec4 envColor = textureCubeUV( envMap, reflectVec, 0.0 );
+        #else
+            vec4 envColor = vec4( 0.0 );
+        #endif
+        #ifndef ENVMAP_TYPE_CUBE_UV
+            envColor = envMapTexelToLinear( envColor );
+        #endif
+        #ifdef ENVMAP_BLENDING_MULTIPLY
+            outgoingLight = mix( outgoingLight, outgoingLight * envColor.xyz, specularStrength * reflectivity );
+            #elif defined( ENVMAP_BLENDING_MIX )
+            outgoingLight = mix( outgoingLight, envColor.xyz, specularStrength * reflectivity );
+            #elif defined( ENVMAP_BLENDING_ADD )
+            outgoingLight += envColor.xyz * specularStrength * reflectivity;
+        #endif
+    #endif
+    gl_FragColor = vec4( outgoingLight, diffuseColor.a );
+    #if defined( TONE_MAPPING )
+        gl_FragColor.rgb = toneMapping( gl_FragColor.rgb );
+    #endif
+    gl_FragColor = linearToOutputTexel( gl_FragColor );
+    #ifdef USE_FOG
+        #ifdef FOG_EXP2
+            float fogFactor = 1.0 - exp( - fogDensity * fogDensity * fogDepth * fogDepth );
+        #else
+            float fogFactor = smoothstep( fogNear, fogFar, fogDepth );
+        #endif
+        gl_FragColor.rgb = mix( gl_FragColor.rgb, fogColor, fogFactor );
+    #endif
+    #ifdef PREMULTIPLIED_ALPHA
+        gl_FragColor.rgb *= gl_FragColor.a;
+    #endif
+    #ifdef DITHERING
+        gl_FragColor.rgb = dithering( gl_FragColor.rgb );
+    #endif
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br><span class="line-number">278</span><br><span class="line-number">279</span><br><span class="line-number">280</span><br><span class="line-number">281</span><br><span class="line-number">282</span><br><span class="line-number">283</span><br><span class="line-number">284</span><br><span class="line-number">285</span><br><span class="line-number">286</span><br><span class="line-number">287</span><br><span class="line-number">288</span><br><span class="line-number">289</span><br><span class="line-number">290</span><br><span class="line-number">291</span><br><span class="line-number">292</span><br><span class="line-number">293</span><br><span class="line-number">294</span><br><span class="line-number">295</span><br><span class="line-number">296</span><br><span class="line-number">297</span><br><span class="line-number">298</span><br><span class="line-number">299</span><br><span class="line-number">300</span><br><span class="line-number">301</span><br><span class="line-number">302</span><br><span class="line-number">303</span><br><span class="line-number">304</span><br><span class="line-number">305</span><br><span class="line-number">306</span><br><span class="line-number">307</span><br><span class="line-number">308</span><br><span class="line-number">309</span><br><span class="line-number">310</span><br><span class="line-number">311</span><br><span class="line-number">312</span><br><span class="line-number">313</span><br><span class="line-number">314</span><br><span class="line-number">315</span><br><span class="line-number">316</span><br><span class="line-number">317</span><br><span class="line-number">318</span><br><span class="line-number">319</span><br><span class="line-number">320</span><br><span class="line-number">321</span><br><span class="line-number">322</span><br><span class="line-number">323</span><br><span class="line-number">324</span><br><span class="line-number">325</span><br><span class="line-number">326</span><br><span class="line-number">327</span><br><span class="line-number">328</span><br><span class="line-number">329</span><br><span class="line-number">330</span><br><span class="line-number">331</span><br><span class="line-number">332</span><br><span class="line-number">333</span><br><span class="line-number">334</span><br><span class="line-number">335</span><br><span class="line-number">336</span><br><span class="line-number">337</span><br><span class="line-number">338</span><br><span class="line-number">339</span><br><span class="line-number">340</span><br><span class="line-number">341</span><br><span class="line-number">342</span><br><span class="line-number">343</span><br><span class="line-number">344</span><br><span class="line-number">345</span><br><span class="line-number">346</span><br><span class="line-number">347</span><br><span class="line-number">348</span><br><span class="line-number">349</span><br><span class="line-number">350</span><br><span class="line-number">351</span><br><span class="line-number">352</span><br><span class="line-number">353</span><br><span class="line-number">354</span><br><span class="line-number">355</span><br><span class="line-number">356</span><br><span class="line-number">357</span><br><span class="line-number">358</span><br><span class="line-number">359</span><br><span class="line-number">360</span><br><span class="line-number">361</span><br><span class="line-number">362</span><br><span class="line-number">363</span><br><span class="line-number">364</span><br><span class="line-number">365</span><br><span class="line-number">366</span><br><span class="line-number">367</span><br><span class="line-number">368</span><br><span class="line-number">369</span><br><span class="line-number">370</span><br><span class="line-number">371</span><br><span class="line-number">372</span><br><span class="line-number">373</span><br><span class="line-number">374</span><br><span class="line-number">375</span><br><span class="line-number">376</span><br><span class="line-number">377</span><br><span class="line-number">378</span><br><span class="line-number">379</span><br><span class="line-number">380</span><br><span class="line-number">381</span><br><span class="line-number">382</span><br><span class="line-number">383</span><br><span class="line-number">384</span><br><span class="line-number">385</span><br><span class="line-number">386</span><br><span class="line-number">387</span><br><span class="line-number">388</span><br><span class="line-number">389</span><br><span class="line-number">390</span><br><span class="line-number">391</span><br><span class="line-number">392</span><br><span class="line-number">393</span><br><span class="line-number">394</span><br><span class="line-number">395</span><br><span class="line-number">396</span><br><span class="line-number">397</span><br><span class="line-number">398</span><br><span class="line-number">399</span><br><span class="line-number">400</span><br><span class="line-number">401</span><br><span class="line-number">402</span><br><span class="line-number">403</span><br><span class="line-number">404</span><br><span class="line-number">405</span><br><span class="line-number">406</span><br><span class="line-number">407</span><br><span class="line-number">408</span><br><span class="line-number">409</span><br><span class="line-number">410</span><br><span class="line-number">411</span><br><span class="line-number">412</span><br><span class="line-number">413</span><br><span class="line-number">414</span><br><span class="line-number">415</span><br><span class="line-number">416</span><br><span class="line-number">417</span><br><span class="line-number">418</span><br><span class="line-number">419</span><br><span class="line-number">420</span><br><span class="line-number">421</span><br><span class="line-number">422</span><br><span class="line-number">423</span><br><span class="line-number">424</span><br><span class="line-number">425</span><br><span class="line-number">426</span><br><span class="line-number">427</span><br><span class="line-number">428</span><br><span class="line-number">429</span><br><span class="line-number">430</span><br><span class="line-number">431</span><br><span class="line-number">432</span><br><span class="line-number">433</span><br><span class="line-number">434</span><br><span class="line-number">435</span><br><span class="line-number">436</span><br><span class="line-number">437</span><br><span class="line-number">438</span><br><span class="line-number">439</span><br><span class="line-number">440</span><br><span class="line-number">441</span><br><span class="line-number">442</span><br><span class="line-number">443</span><br><span class="line-number">444</span><br><span class="line-number">445</span><br><span class="line-number">446</span><br><span class="line-number">447</span><br><span class="line-number">448</span><br><span class="line-number">449</span><br><span class="line-number">450</span><br><span class="line-number">451</span><br><span class="line-number">452</span><br><span class="line-number">453</span><br><span class="line-number">454</span><br><span class="line-number">455</span><br><span class="line-number">456</span><br><span class="line-number">457</span><br><span class="line-number">458</span><br><span class="line-number">459</span><br><span class="line-number">460</span><br><span class="line-number">461</span><br><span class="line-number">462</span><br><span class="line-number">463</span><br><span class="line-number">464</span><br><span class="line-number">465</span><br><span class="line-number">466</span><br><span class="line-number">467</span><br><span class="line-number">468</span><br><span class="line-number">469</span><br><span class="line-number">470</span><br><span class="line-number">471</span><br><span class="line-number">472</span><br><span class="line-number">473</span><br><span class="line-number">474</span><br><span class="line-number">475</span><br><span class="line-number">476</span><br><span class="line-number">477</span><br><span class="line-number">478</span><br><span class="line-number">479</span><br><span class="line-number">480</span><br><span class="line-number">481</span><br><span class="line-number">482</span><br><span class="line-number">483</span><br><span class="line-number">484</span><br><span class="line-number">485</span><br><span class="line-number">486</span><br><span class="line-number">487</span><br><span class="line-number">488</span><br><span class="line-number">489</span><br><span class="line-number">490</span><br><span class="line-number">491</span><br><span class="line-number">492</span><br><span class="line-number">493</span><br><span class="line-number">494</span><br><span class="line-number">495</span><br><span class="line-number">496</span><br><span class="line-number">497</span><br><span class="line-number">498</span><br><span class="line-number">499</span><br><span class="line-number">500</span><br><span class="line-number">501</span><br><span class="line-number">502</span><br><span class="line-number">503</span><br><span class="line-number">504</span><br><span class="line-number">505</span><br><span class="line-number">506</span><br><span class="line-number">507</span><br></div></div><p>来看看Material材质的变量，在shader是什么样子</p> <ul><li>color: 材质的颜色，穿着布料的基本颜色， shader中color的定义和使用</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>// color的定义
+#ifdef USE_COLOR
+    attribute vec3 color;
+#endif
+
+// color的使用
+#ifdef USE_COLOR
+    vColor.xyz *= color.xyz;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><ul><li>map:  材质的贴图，穿着布料上的图片，花纹</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>// map的定义
+#ifdef USE_MAP
+    uniform sampler2D map;
+#endif
+
+// map的使用
+ #ifdef USE_MAP
+     vec4 texelColor = texture2D( map, vUv );
+     texelColor = mapTexelToLinear( texelColor );
+     diffuseColor *= texelColor;
+ #endif
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><ul><li>lightmap: 灯光贴图，物体的不同部分对光有不同反映</li> <li>aomap：环境光遮蔽体贴，就像画眼影，在一些细节支出，增加立体效果</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 定义
+#if defined( USE_LIGHTMAP ) || defined( USE_AOMAP )
+    attribute vec2 uv2;
+    varying vec2 vUv2;
+    uniform mat3 uv2Transform;
+#endif
+
+
+#if defined( USE_LIGHTMAP ) || defined( USE_AOMAP )
+        vUv2 = ( uv2Transform * vec3( uv2, 1 ) ).xy;
+#endif
+
+// 使用
+#ifdef USE_LIGHTMAP
+        vec4 lightMapTexel = texture2D( lightMap, vUv2 );
+        reflectedLight.indirectDiffuse += lightMapTexelToLinear( lightMapTexel ).rgb * lightMapIntensity;
+    #else
+        reflectedLight.indirectDiffuse += vec3( 1.0 );
+    #endif
+    #ifdef USE_AOMAP
+        float ambientOcclusion = ( texture2D( aoMap, vUv2 ).r - 1.0 ) * aoMapIntensity + 1.0;
+        reflectedLight.indirectDiffuse *= ambientOcclusion;
+        #if defined( USE_ENVMAP ) &amp;&amp; defined( STANDARD )
+            float dotNV = saturate( dot( geometry.normal, geometry.viewDir ) );
+            reflectedLight.indirectSpecular *= computeSpecularOcclusion( dotNV, ambientOcclusion, material.specularRoughness );
+        #endif
+    #endif
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><ul><li>specularMap：高光贴图，就是一种特殊的贴图而已，打光</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 定义
+#ifdef USE_SPECULARMAP
+    uniform sampler2D specularMap;
+#endif
+
+// 
+#ifdef USE_SPECULARMAP
+        vec4 texelSpecular = texture2D( specularMap, vUv );
+        specularStrength = texelSpecular.r;
+    #else
+        specularStrength = 1.0;
+    #endif
+    
+ 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><ul><li>envMap：环境贴图，就是整个环境在人身上的映射</li> <li>combine：就是环境光贴图与灯光之间计算的方式，有三种：add, mix，multiply，计算方式不同，最终输出结果自然不同</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>   #ifdef ENVMAP_BLENDING_MULTIPLY
+            outgoingLight = mix( outgoingLight, outgoingLight * envColor.xyz, specularStrength * reflectivity );
+            #elif defined( ENVMAP_BLENDING_MIX )
+            outgoingLight = mix( outgoingLight, envColor.xyz, specularStrength * reflectivity );
+            #elif defined( ENVMAP_BLENDING_ADD )
+            outgoingLight += envColor.xyz * specularStrength * reflectivity;
+        #endif
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>随便改改参数，试试效果</p> <p><img src="https://i.loli.net/2021/04/25/MpzvNYQcmyX8h4k.png" alt="chrome_0o0oZWluLs.png"></p></div> <footer class="page-edit" style="display:none;"><div class="edit-link"><a href="https://github.com/3D-for-Fun/3D-for-Fun.github.io/edit/gh-pages-source/docs/views/Blog/threejs/06-Materials-Basic.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-a008c6ba data-v-a008c6ba><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-a008c6ba><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-a008c6ba></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-a008c6ba></path></svg></div><!----></div></div>
+    <script src="/assets/js/app.7a57daab.js" defer></script><script src="/assets/js/4.06458381.js" defer></script><script src="/assets/js/1.d2b2af19.js" defer></script><script src="/assets/js/95.c4508fb4.js" defer></script>
+  </body>
+</html>
