@@ -9,7 +9,7 @@ categories:
  - ThreeJS
 ---
 
-# 1. 概述
+## 1. 概述
 
 本文主要介绍以下内容：
 
@@ -26,7 +26,7 @@ categories:
 
 
 
-# 2. Mesh
+## 2. Mesh
 
 在three.js概念里，mesh是由几何体Geometry和材质Material组成的，在源码Mesh.js可以看到之间的关系：
 
@@ -52,9 +52,7 @@ Mesh  = Geometry + Material
 首先我们要回顾下图形渲染管线了。
 
 
-![image](https://cdn.nlark.com/yuque/0/2021/png/244017/1618285908853-a5afb58f-874c-456b-92f4-74185d151df3.png?x-oss-process=image%2Fresize%2Cw_847)
-
-
+![语雀_Hqd1ChddUi.png](https://i.loli.net/2021/05/10/61BD4LRhkFetw2u.png)
 
 所以，从上图可以理解：
 
@@ -64,7 +62,7 @@ Mesh  = Geometry + Material
 >
 > **Material：对应Fragment片元处理过程，对每个三角面片进行着色、贴图等等处理；**
 
-# 3. Geometry
+## 3. Geometry
 
 几何体，就是在准备一堆顶点数据，主要包括顶点数据、颜色数据、UV贴图数据、法向量数据等等；简单的说，几何体就是数据源，如果你对如何通过三角面片拼接成几何体非常了解，完全可以自己组织数据，不幸的是，这样操作不仅麻烦，而且也是非常困难的事情。所以，three.js内置常用的几何体，供大家直接使用，然后控制Position、Scale、Rotation、visible等空间属性，来操控物体。
 
@@ -316,12 +314,10 @@ animate();
 ```
 npm run dev
 ```
+![chrome_Z4gMM2ZZrx.png](https://i.loli.net/2021/04/22/Rb1WhwUxX7fjvg6.png)
+## 4. BufferGeometry
 
-![chrome_Z4gMM2ZZrx.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619101204808-3cc82820-dbd8-43ed-b2e2-053b57772f4f.png?x-oss-process=image%2Fresize%2Cw_1500)
-
-# 4. BufferGeometry
-
-## 4.1 Line
+### 4.1 Line
 
 ```
 // create line by buffergeometry
@@ -338,11 +334,9 @@ scene.add(line);
 
 运行后，场景中多一个Line。
 
-![chrome_6w1pMSQ0mG.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619102016959-a2db84c3-2adf-45d2-b476-7deeb8050ab0.png?x-oss-process=image%2Fresize%2Cw_1500)
+![chrome_6w1pMSQ0mG.png](https://i.loli.net/2021/04/22/tnEeZQKxHFjr4DT.png)
 
-
-
-## 4.2 Tetrahedron
+### 4.2 Tetrahedron
 
 ```
 const material2 = new THREE.MeshNormalMaterial();
@@ -377,11 +371,9 @@ scene.add(mesh2);
 
 运行后，多出一个三角锥：
 
-![chrome_EMObkqIfvs.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619102065886-5f035c49-d67d-4099-b686-28e63f18e896.png?x-oss-process=image%2Fresize%2Cw_1500)
+![chrome_EMObkqIfvs.png](https://i.loli.net/2021/04/22/lJAykfZPMwo4quh.png)
 
-
-
-# 5. BufferGeometry和Geometry的区别
+## 5. BufferGeometry和Geometry的区别
 
 为什么即存在Geometry，又存在BufferGeometry?
 
@@ -389,25 +381,24 @@ scene.add(mesh2);
 
 **BufferGeometry更适合计算机来理解，自定义的地方很少，适合对图形学非常了解的人使用，但是性能很高。**
 
-# 6. 3D模型数据源
+## 6. 3D模型数据源
 
 内置的几何体，都是一些非常基础的模型，可以使用这些基础模型组装成，搭积木的方式，组成非常复杂的场景。
 
 目前国内，数字产业化搞得如火如荼，各个行业都要数字化，所以数据的来源也是非常复杂的，多种多样的，比如：BIM行业的Revit数据模型、CAD图纸，GIS行业的各种数据要素、倾斜摄影、tiles，可以参考CesiumLab的数据转换这张图。
 
-![QQPCRealTimeSpeedup_hpLnMaV40h.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619102502497-0a7946d8-c591-42b8-8f51-39c5dab85784.png?x-oss-process=image%2Fresize%2Cw_1500)
-
+![ShareX_spfDiaCvWG.png](https://i.loli.net/2021/05/10/4UTPdWBZ8eVnv6L.png)
 
 
 最终都会将各行各业的数据进行转换，轻量化，瓦片化等等技术手段，传输给Three.js的BufferGeometry，进行渲染；
 
 或者将数据通过Datasmith的插件，转换数据转换成Unreal Engine的资产进行渲染。
 
-![chrome_pGLnFund5x.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619102627252-7e87c65a-9a8d-4d4b-9a62-929723ed72ab.png?x-oss-process=image%2Fresize%2Cw_1500)
+![chrome_pGLnFund5x.png](https://i.loli.net/2021/04/22/HX6nCmxlVzPBRSc.png)
 
 后期会针对熟悉的行业数据进行一一分析，探讨应用场景。
 
-# 7.总结
+## 7.总结
 
 图形学分为三大部分，几何、渲染、动画。
 
@@ -416,8 +407,7 @@ scene.add(mesh2);
 > 3. 动画，物理引擎。
 
 
-
-# 8. 参考资料
+## 8. 参考资料
 
 1. [Three.js教程](http://www.webgl3d.cn/Three.js/)
 2. https://www.wjceo.com/ 暮志未晚

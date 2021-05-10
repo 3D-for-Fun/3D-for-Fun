@@ -9,7 +9,7 @@ categories:
  - ThreeJS
 ---
 
-# 1. 概述
+## 1. 概述
 
 本文主要介绍以下内容：
 
@@ -21,7 +21,7 @@ categories:
 
 本文代码地址：https://github.com/ue007/three.ts/tree/main/05-Object3D
 
-# 2. Object3D
+## 2. Object3D
 
 首先，来介绍下什么是Object3D？
 
@@ -84,7 +84,7 @@ Three.Object3D是threejs中的基类，是一切的三维空间的基础，就�
 
 接下来，我们使用three.js 以及GUI面板，对Object3D的position、scale、rotation进行调试，看看具体的效果。
 
-## 2.1 GUI控制Position
+### 2.1 GUI控制Position
 
 在client.ts中加入控制Position的代码：
 
@@ -97,10 +97,7 @@ cubePositionFolder.add(cube.position, 'z', -10, 10);
 cubeFolder.open();
 ```
 
-
-
-![chrome_X4Dau45u1S.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619083645194-e5dc23f1-8de5-49fd-a383-b37828362e3e.png)
-
+![chrome_X4Dau45u1S.png](https://i.loli.net/2021/04/22/uOAoyKH54ZhePBt.png)
 
 
 运行代码，调试下参数试试，尝试理解下基础的概念即可。
@@ -118,9 +115,7 @@ cubeRotationFolder.add(cube.rotation, 'z', 0, Math.PI * 2, 0.01);
 cubeFolder.open();
 ```
 
-![chrome_kCc82pXX0D.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619083537425-5f2f6e18-d86e-4eac-9be1-dc2c389654eb.png)
-
-
+![chrome_kCc82pXX0D.png](https://i.loli.net/2021/04/22/WqekwidVQ9DBa1u.png)
 
 ## 2.3 GUI控制Scale
 
@@ -133,8 +128,7 @@ cubeScaleFolder.add(cube.scale, 'y', -5, 5, 0.1);
 cubeScaleFolder.add(cube.scale, 'z', -5, 5, 0.1);
 cubeFolder.add(cube, 'visible', true);
 ```
-
-![chrome_8SkWsIY7Xi.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619083697099-e9b69d2d-aa5e-4130-b957-f71987ebb918.png)
+![chrome_8SkWsIY7Xi.png](https://i.loli.net/2021/04/22/JqfCBrbxDTEsNKe.png)
 
 ## 2.4 GUI控制Visible
 
@@ -144,10 +138,7 @@ cubeFolder.add(cube, 'visible', true);
 cubeFolder.add(cube, 'visible', true);
 ```
 
-![chrome_nythnam0Pg.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619083748024-f75162d8-3b88-4802-9660-e8f08cd7fd3c.png)
-
-
-
+![chrome_nythnam0Pg.png](https://i.loli.net/2021/04/22/iqV51OTXmeW4n6v.png)
 ## 2.5 完整代码
 
 ```javascript
@@ -231,7 +222,7 @@ function render() {
 animate();
 ```
 
-![chrome_uI8wojM6iR.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619083773338-216cb8f9-c818-421b-bd35-8514df4f6297.png?x-oss-process=image%2Fresize%2Cw_1500)
+![chrome_uI8wojM6iR.png](https://i.loli.net/2021/04/22/h1nQzcDZ7GgVpFm.png)
 
 # 3. Object3D Hierarchy
 
@@ -332,23 +323,16 @@ npm run dev
 ```
 
 浏览器中打开localhost:8080，运行结果如下：
-
-![chrome_oDEbW0kjme.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619085313229-0337ec9d-accc-4bd1-b374-f25a580a444c.png?x-oss-process=image%2Fresize%2Cw_1500)
+![chrome_oDEbW0kjme.png](https://i.loli.net/2021/04/22/oE1Tsh49WJXGcfk.png)
 
 调整父亲空间信息，围绕x轴旋转，发现三个物体，一起发生了旋转：
-
-![chrome_Pc6ftsy8nj.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619085467552-07e1f446-2caf-4fa3-a778-a5830deed193.png?x-oss-process=image%2Fresize%2Cw_1500)
+![chrome_Pc6ftsy8nj.png](https://i.loli.net/2021/04/22/qjpUzCdur3A5SDM.png)
 
 再调整Green（我自己）球体，平移一定距离，发现我和儿子一起发生了变化，父亲不变：
-
-![chrome_s59lnW0PQI.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619085573041-510541ac-343a-4959-9431-9e41bcf78a31.png?x-oss-process=image%2Fresize%2Cw_1500)
-
-
+![chrome_s59lnW0PQI.png](https://i.loli.net/2021/04/22/6quHkLVwmvt3Tcj.png)
 
 再调整Blue（儿子）球体，旋转一定角度，发现只有儿子发生了变化，我和父亲都不变：
-
-![chrome_R9N4WEQEbv.png](https://cdn.nlark.com/yuque/0/2021/png/244017/1619085645642-581651ea-aad3-4b5c-b4fa-7deb4401af9a.png?x-oss-process=image%2Fresize%2Cw_1500)
-
+![chrome_R9N4WEQEbv.png](https://i.loli.net/2021/04/22/gXJRCpGd1De8SH4.png)
 
 
 
