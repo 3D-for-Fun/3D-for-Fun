@@ -1,5 +1,5 @@
 ---
-title: （七）Cesium for Unreal构建航班轨迹（译）
+title: （七）Cesium for Unreal创建航班追踪器（译）
 date: 2021-05-23
 author: 'ue001'
 lang: 'zh-CN'
@@ -28,7 +28,7 @@ categories:
 ## 准备工作
 * 安装虚幻引擎（至少4.26或更高版本）。有关如何安装虚幻引擎的说明，请查阅[虚幻引擎下载页面](https://www.unrealengine.com/zh-CN/download)和[安装虚幻引擎](https://docs.unrealengine.com/zh-CN/Basics/InstallingUnrealEngine/index.html)指南。
 * 安装Visual Studio 2019
-* 知道如何构建基本的**Cesium for Unreal**应用程序。查看[Cesium for Unreal快速入门指南](./cesium-unreal-quickstart.html)，以获取有关Cesium for Unreal插件的入门指南。
+* 知道如何创建基本的**Cesium for Unreal**应用程序。查看[Cesium for Unreal快速入门指南](./cesium-unreal-quickstart.html)，以获取有关Cesium for Unreal插件的入门指南。
 
 ## 第一步：创建虚幻关卡
 您可以从虚幻引擎市场上下载的[Cesium for Unreal Samples](https://www.unrealengine.com/marketplace/zh-CN/product/cesium-samples)的**01_CesiumWorld**关卡开始，也可以创建一个新关卡。如果用新的关卡，请确保关卡中至少有**CesiumWorld Terrain**和一些灯光（使用**CesiumSunSky**或您自己的自定义灯光）。查看[快速入门指南](./cesium-unreal-quickstart.html)，了解如何使用**Cesium for Unreal**创建新的关卡。
