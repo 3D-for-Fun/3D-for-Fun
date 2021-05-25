@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>（七）Cesium for Unreal构建航班轨迹（译） | 3D For Fun</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icon_vuepress_reco.png">
+    <link rel="mask-icon" href="/icon_vuepress_reco.svg" color="#42b983">
+    <meta name="description" content="爱好图形，专注三维">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="author" content="3D-for-Fun">
+    <meta name="keywords" content="vuepress,reco,ue***,vuepress-reco,vuepress-theme-reco,theme,blog,主题">
+    <meta name="theme-color" content="#42b983">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icon_vuepress_reco.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.c75b1088.css" as="style"><link rel="preload" href="/assets/js/app.20a62c5e.js" as="script"><link rel="preload" href="/assets/js/4.03d0c1ba.js" as="script"><link rel="preload" href="/assets/js/1.552e0a87.js" as="script"><link rel="preload" href="/assets/js/89.4a272ce6.js" as="script"><link rel="prefetch" href="/assets/js/10.14556356.js"><link rel="prefetch" href="/assets/js/100.3eb6bf57.js"><link rel="prefetch" href="/assets/js/101.db948992.js"><link rel="prefetch" href="/assets/js/102.630e286f.js"><link rel="prefetch" href="/assets/js/103.ae27794b.js"><link rel="prefetch" href="/assets/js/104.6ce52000.js"><link rel="prefetch" href="/assets/js/105.bfc78170.js"><link rel="prefetch" href="/assets/js/106.bb495e06.js"><link rel="prefetch" href="/assets/js/107.35dec00a.js"><link rel="prefetch" href="/assets/js/108.612abcd4.js"><link rel="prefetch" href="/assets/js/109.844748db.js"><link rel="prefetch" href="/assets/js/11.b32c6ac5.js"><link rel="prefetch" href="/assets/js/110.0c4e9b48.js"><link rel="prefetch" href="/assets/js/111.3846633d.js"><link rel="prefetch" href="/assets/js/112.e9f675dc.js"><link rel="prefetch" href="/assets/js/113.84d17010.js"><link rel="prefetch" href="/assets/js/114.d430faf4.js"><link rel="prefetch" href="/assets/js/115.a487d236.js"><link rel="prefetch" href="/assets/js/116.dbb6c4d2.js"><link rel="prefetch" href="/assets/js/117.feed12a8.js"><link rel="prefetch" href="/assets/js/118.450630a7.js"><link rel="prefetch" href="/assets/js/119.82ba86f8.js"><link rel="prefetch" href="/assets/js/12.b9438c39.js"><link rel="prefetch" href="/assets/js/120.c9c873a5.js"><link rel="prefetch" href="/assets/js/121.a9e03bfc.js"><link rel="prefetch" href="/assets/js/13.962a2296.js"><link rel="prefetch" href="/assets/js/14.8d2a6fa1.js"><link rel="prefetch" href="/assets/js/15.dceb2aec.js"><link rel="prefetch" href="/assets/js/16.48fd8db0.js"><link rel="prefetch" href="/assets/js/17.d6dad7e7.js"><link rel="prefetch" href="/assets/js/18.6f53c79f.js"><link rel="prefetch" href="/assets/js/19.925d6cd9.js"><link rel="prefetch" href="/assets/js/20.3e8d4325.js"><link rel="prefetch" href="/assets/js/21.cf541ea1.js"><link rel="prefetch" href="/assets/js/22.3cd79d15.js"><link rel="prefetch" href="/assets/js/23.538d8efd.js"><link rel="prefetch" href="/assets/js/24.61564d7c.js"><link rel="prefetch" href="/assets/js/25.f5544c29.js"><link rel="prefetch" href="/assets/js/26.15afe442.js"><link rel="prefetch" href="/assets/js/27.100c7b42.js"><link rel="prefetch" href="/assets/js/28.9f85ff14.js"><link rel="prefetch" href="/assets/js/29.78795526.js"><link rel="prefetch" href="/assets/js/30.33ac6d2f.js"><link rel="prefetch" href="/assets/js/31.246d0a4c.js"><link rel="prefetch" href="/assets/js/32.411539bf.js"><link rel="prefetch" href="/assets/js/33.2bda5b5a.js"><link rel="prefetch" href="/assets/js/34.6a852645.js"><link rel="prefetch" href="/assets/js/35.02faea22.js"><link rel="prefetch" href="/assets/js/36.c02c76f3.js"><link rel="prefetch" href="/assets/js/37.5a2e37b9.js"><link rel="prefetch" href="/assets/js/38.c6e10ff4.js"><link rel="prefetch" href="/assets/js/39.c34e9830.js"><link rel="prefetch" href="/assets/js/40.bceb1256.js"><link rel="prefetch" href="/assets/js/41.8f4e0415.js"><link rel="prefetch" href="/assets/js/42.d435bf30.js"><link rel="prefetch" href="/assets/js/43.ff9b7ece.js"><link rel="prefetch" href="/assets/js/44.efb6a3fd.js"><link rel="prefetch" href="/assets/js/45.22c8cddf.js"><link rel="prefetch" href="/assets/js/46.87c96908.js"><link rel="prefetch" href="/assets/js/47.adf98bcf.js"><link rel="prefetch" href="/assets/js/48.821490d9.js"><link rel="prefetch" href="/assets/js/49.dc916509.js"><link rel="prefetch" href="/assets/js/5.c7ad700c.js"><link rel="prefetch" href="/assets/js/50.77cf2c98.js"><link rel="prefetch" href="/assets/js/51.4988c596.js"><link rel="prefetch" href="/assets/js/52.a5b4f20b.js"><link rel="prefetch" href="/assets/js/53.21791d5a.js"><link rel="prefetch" href="/assets/js/54.ee0f8606.js"><link rel="prefetch" href="/assets/js/55.328f5a20.js"><link rel="prefetch" href="/assets/js/56.6c51261f.js"><link rel="prefetch" href="/assets/js/57.021514f5.js"><link rel="prefetch" href="/assets/js/58.73a8ceb1.js"><link rel="prefetch" href="/assets/js/59.ad1bcced.js"><link rel="prefetch" href="/assets/js/6.d39f79d0.js"><link rel="prefetch" href="/assets/js/60.16280aa6.js"><link rel="prefetch" href="/assets/js/61.9326f6cc.js"><link rel="prefetch" href="/assets/js/62.8f9fb1d9.js"><link rel="prefetch" href="/assets/js/63.9074c786.js"><link rel="prefetch" href="/assets/js/64.042bd333.js"><link rel="prefetch" href="/assets/js/65.009a1a7f.js"><link rel="prefetch" href="/assets/js/66.ff0b2512.js"><link rel="prefetch" href="/assets/js/67.0ea1a9b2.js"><link rel="prefetch" href="/assets/js/68.19215eb2.js"><link rel="prefetch" href="/assets/js/69.540ff046.js"><link rel="prefetch" href="/assets/js/7.889a91f3.js"><link rel="prefetch" href="/assets/js/70.26fa7634.js"><link rel="prefetch" href="/assets/js/71.a02e4c62.js"><link rel="prefetch" href="/assets/js/72.310fc7c4.js"><link rel="prefetch" href="/assets/js/73.6138f46a.js"><link rel="prefetch" href="/assets/js/74.294efd87.js"><link rel="prefetch" href="/assets/js/75.9bea22e7.js"><link rel="prefetch" href="/assets/js/76.a90f190a.js"><link rel="prefetch" href="/assets/js/77.9438573d.js"><link rel="prefetch" href="/assets/js/78.b62f70db.js"><link rel="prefetch" href="/assets/js/79.d1a838b0.js"><link rel="prefetch" href="/assets/js/8.70513e66.js"><link rel="prefetch" href="/assets/js/80.07c0a11b.js"><link rel="prefetch" href="/assets/js/81.c6c99f4b.js"><link rel="prefetch" href="/assets/js/82.86a5b45a.js"><link rel="prefetch" href="/assets/js/83.3c2e830e.js"><link rel="prefetch" href="/assets/js/84.b83c5e1f.js"><link rel="prefetch" href="/assets/js/85.1e5a29a5.js"><link rel="prefetch" href="/assets/js/86.8c5fd08d.js"><link rel="prefetch" href="/assets/js/87.03fb2716.js"><link rel="prefetch" href="/assets/js/88.99b917d1.js"><link rel="prefetch" href="/assets/js/9.20e9f318.js"><link rel="prefetch" href="/assets/js/90.0fb9b397.js"><link rel="prefetch" href="/assets/js/91.e1ac0855.js"><link rel="prefetch" href="/assets/js/92.4244d4cc.js"><link rel="prefetch" href="/assets/js/93.832d3c52.js"><link rel="prefetch" href="/assets/js/94.dc735dd3.js"><link rel="prefetch" href="/assets/js/95.0fb01b7c.js"><link rel="prefetch" href="/assets/js/96.71cba74b.js"><link rel="prefetch" href="/assets/js/97.010b00ee.js"><link rel="prefetch" href="/assets/js/98.ba6d6458.js"><link rel="prefetch" href="/assets/js/99.377dbf9f.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.6c3f82f7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c75b1088.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-cd01cc30><div data-v-cd01cc30><div id="loader-wrapper" class="loading-wrapper" data-v-2c578df8 data-v-cd01cc30 data-v-cd01cc30><div class="loader-main" data-v-2c578df8><div data-v-2c578df8></div><div data-v-2c578df8></div><div data-v-2c578df8></div><div data-v-2c578df8></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-623c7d26 data-v-cd01cc30 data-v-cd01cc30><h3 class="title" style="display:none;" data-v-623c7d26 data-v-623c7d26>3D For Fun</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-623c7d26 data-v-623c7d26><input type="password" value="" data-v-623c7d26> <span data-v-623c7d26>Konck! Knock!</span> <button data-v-623c7d26>OK</button></label> <div class="footer" style="display:none;" data-v-623c7d26 data-v-623c7d26><span data-v-623c7d26><i class="iconfont reco-theme" data-v-623c7d26></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-623c7d26>vuePress-theme-reco</a></span> <span data-v-623c7d26><i class="iconfont reco-copyright" data-v-623c7d26></i> <a data-v-623c7d26><span data-v-623c7d26>3D-for-Fun</span>
+            
+          <span data-v-623c7d26>1990 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-cd01cc30><header class="navbar" data-v-cd01cc30><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">3D For Fun</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont undefined"></i>
+  首页
+</a></div><div class="nav-item"><a href="/categories/blog/" class="nav-link"><i class="iconfont reco-blog"></i>
+  博客
+</a></div> <a href="https://github.com/3D-for-Fun/3D-for-Fun.github.io" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask" data-v-cd01cc30></div> <aside class="sidebar" data-v-cd01cc30><div class="personal-info-wrapper" data-v-2a0ed2ae data-v-cd01cc30><img src="/head.png" alt="author-avatar" class="personal-img" data-v-2a0ed2ae> <h3 class="name" data-v-2a0ed2ae>
+    3D-for-Fun
+  </h3> <div class="num" data-v-2a0ed2ae><div data-v-2a0ed2ae><h3 data-v-2a0ed2ae>15</h3> <h6 data-v-2a0ed2ae>文章</h6></div> <div data-v-2a0ed2ae><h3 data-v-2a0ed2ae>0</h3> <h6 data-v-2a0ed2ae>标签</h6></div></div> <hr data-v-2a0ed2ae></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont undefined"></i>
+  首页
+</a></div><div class="nav-item"><a href="/categories/blog/" class="nav-link"><i class="iconfont reco-blog"></i>
+  博客
+</a></div> <a href="https://github.com/3D-for-Fun/3D-for-Fun.github.io" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-623c7d26 data-v-cd01cc30><h3 class="title" style="display:none;" data-v-623c7d26 data-v-623c7d26>（七）Cesium for Unreal构建航班轨迹（译）</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-623c7d26 data-v-623c7d26><input type="password" value="" data-v-623c7d26> <span data-v-623c7d26>Konck! Knock!</span> <button data-v-623c7d26>OK</button></label> <div class="footer" style="display:none;" data-v-623c7d26 data-v-623c7d26><span data-v-623c7d26><i class="iconfont reco-theme" data-v-623c7d26></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-623c7d26>vuePress-theme-reco</a></span> <span data-v-623c7d26><i class="iconfont reco-copyright" data-v-623c7d26></i> <a data-v-623c7d26><span data-v-623c7d26>3D-for-Fun</span>
+            
+          <span data-v-623c7d26>1990 - </span>
+          2021
+        </a></span></div></div> <div data-v-cd01cc30><main class="page"><div class="page-title" style="display:none;"><h1 class="title">（七）Cesium for Unreal构建航班轨迹（译）</h1> <div data-v-8bc6ae5c><i class="iconfont reco-account" data-v-8bc6ae5c><span data-v-8bc6ae5c>ue001</span></i> <i class="iconfont reco-date" data-v-8bc6ae5c><span data-v-8bc6ae5c>2021-05-23</span></i> <i class="iconfont reco-eye" data-v-8bc6ae5c><span id="/views/Blog/cesium/cesium-flight-tracker.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-8bc6ae5c><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <!----></div></div> <div class="theme-reco-content content__default" style="display:none;"><blockquote><p>原文请参考Cesium官方文档：<a href="https://cesium.com/docs/tutorials/cesium-unreal-flight-tracker/" target="_blank" rel="noopener noreferrer">Build a Flight Tracker with Cesium for Unreal<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <blockquote><p>上一篇：<a href="/views/Blog/cesium/cesium-flyto.html">（六）Cesium for Unreal在全球各地穿梭（译）</a></p></blockquote> <p>本教程将向您展示如何用可视化的方式查看从旧金山到哥本哈根的航班。</p> <p><img src="https://i.loli.net/2021/05/23/YUmgzK2awIZ4RPk.gif" alt=""> <em>飞越美国加利福尼亚州旧金山</em></p> <p>您将学习如何：</p> <ul><li>将真实的航班数据导入虚幻引擎</li> <li>用数据和<a href="https://docs.unrealengine.com/en-US/API/Runtime/Engine/Components/USplineComponent/index.html" target="_blank" rel="noopener noreferrer">USplineComponent<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>创建航班路线</li> <li>导入飞机模型并使飞机跟随航班轨迹</li> <li>在飞行中切换镜头视角</li></ul> <h2 id="准备工作"><a href="#准备工作" class="header-anchor">#</a> 准备工作</h2> <ul><li>安装虚幻引擎（至少4.26或更高版本）。有关如何安装虚幻引擎的说明，请查阅<a href="https://www.unrealengine.com/zh-CN/download" target="_blank" rel="noopener noreferrer">虚幻引擎下载页面<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>和<a href="https://docs.unrealengine.com/zh-CN/Basics/InstallingUnrealEngine/index.html" target="_blank" rel="noopener noreferrer">安装虚幻引擎<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>指南。</li> <li>安装Visual Studio 2019</li> <li>知道如何构建基本的<strong>Cesium for Unreal</strong>应用程序。查看<a href="/views/Blog/cesium/cesium-unreal-quickstart.html">Cesium for Unreal快速入门指南</a>，以获取有关Cesium for Unreal插件的入门指南。</li></ul> <h2 id="第一步-创建虚幻关卡"><a href="#第一步-创建虚幻关卡" class="header-anchor">#</a> 第一步：创建虚幻关卡</h2> <p>您可以从虚幻引擎市场上下载的<a href="https://www.unrealengine.com/marketplace/zh-CN/product/cesium-samples" target="_blank" rel="noopener noreferrer">Cesium for Unreal Samples<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>的<strong>01_CesiumWorld</strong>关卡开始，也可以创建一个新关卡。如果用新的关卡，请确保关卡中至少有<strong>CesiumWorld Terrain</strong>和一些灯光（使用<strong>CesiumSunSky</strong>或您自己的自定义灯光）。查看<a href="/views/Blog/cesium/cesium-unreal-quickstart.html">快速入门指南</a>，了解如何使用<strong>Cesium for Unreal</strong>创建新的关卡。</p> <p>对于本教程，<strong>CesiumGeoreference</strong> Actor的<strong>Origin Longitude</strong>， <strong>Origin Latitude</strong>和<strong>Origin Height</strong>属性值分别设置为-122.390533、37.61779和0.0，这是航班始发地旧金山国际机场（SFO）的坐标。</p> <h2 id="第二步-添加planetrack类"><a href="#第二步-添加planetrack类" class="header-anchor">#</a> 第二步：添加<strong>PlaneTrack</strong>类</h2> <p><strong>PlaneTrack</strong>类将包含处理航班数据的逻辑，还能生成代表航班轨迹的样条线上的点。</p> <ol><li>点击虚幻编辑器左上角的菜单<strong>File -&gt; New C ++ Class</strong>添加一个新的C++类。选择<strong>Actor</strong>作为父类。点击<strong>File -&gt; Open Visual Studio</strong>，在Visual Studio中打开项目。
+<img src="https://i.loli.net/2021/05/23/x5RsDhOfUy42tNd.png" alt=""></li></ol> <p>可以在Visual Studio项目的Source文件夹中找到新创建的C++文件。
+<img src="https://i.loli.net/2021/05/23/n97JN3brXuMHavA.png" alt=""></p> <ol start="2"><li>将以下代码片段添加到项目<strong>Build.cs</strong>文件中，该文件也可以在<strong>Source</strong>文件夹中找到：</li></ol> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>// 添加Cesium for Unreal插件依赖
+PrivateDependencyModuleNames.AddRange(new string[] { &quot;CesiumRuntime&quot; });
+
+// 告诉虚幻引擎使用C++17
+CppStandard = CppStandardVersion.Cpp17;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><img src="https://i.loli.net/2021/05/23/qjeQA5RxcwBmUkT.png" alt=""></p> <ol start="3"><li>在<strong>PlaneTrack</strong>类中添加一些成员变量，以存储航班数据和样条曲线，并将数据转换为适当的坐标系对应的坐标。导入必要的头文件，并将以下public变量添加到<strong>PlaneTrack.h</strong>头文件中：</li></ol> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>...
+// 添加头文件引用。确保在PlaneTrack.generated.h代码之前（否则会导致编译错误）
+#include &quot;Components/SplineComponent.h&quot;
+#include &quot;CesiumGeoreference.h&quot;
+#include &quot;Engine/DataTable.h&quot;
+...
+
+public: 
+  // 代表航班轨迹的样条线成员变量
+  UPROPERTY(BlueprintReadOnly, Category = &quot;FlightTracker&quot;)
+    USplineComponent* SplineTrack;
+
+  // Cesium工具类，包含很多有用的坐标转换相关的函数
+  UPROPERTY(EditAnywhere, Category = &quot;FlightTracker&quot;)
+    ACesiumGeoreference* CesiumGeoreference;
+
+  // 用于保存航班数据的虚幻引擎数据表
+  UPROPERTY(EditAnywhere, Category = &quot;FlightTracker&quot;)
+    UDataTable* AircraftsRawDataTable;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><ol start="4"><li>打开<strong>PlaneTrack.cpp</strong>文件，在<strong>PlaneTrack</strong>构造函数中初始化<strong>SplineTrack</strong>成员变量：</li></ol> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>APlaneTrack::APlaneTrack()
+{
+  // 让该Actor每帧都执行Tick()方法，如果需要可以设置成false以提高性能
+  PrimaryActorTick.bCanEverTick = true;
+
+  // 初始化轨迹
+  SplineTrack = CreateDefaultSubobject&lt;USplineComponent&gt;(TEXT(&quot;SplineTrack&quot;));
+  // 让样条线在运行模式下可见
+  SplineTrack-&gt;SetDrawDebug(true);
+  // 设置样条线的颜色
+  SplineTrack-&gt;SetUnselectedSplineSegmentColor(FLinearColor(1.f, 0.f, 0.f));
+  // 设置样条线的粗细或者宽度
+  SplineTrack-&gt;ScaleVisualizationWidth = 70.f;                           
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p><strong>ACesiumGeoreference</strong>和<strong>UDataTable</strong>成员变量将在虚幻引擎编辑器中初始化。</p> <p>在继续下一步之前，请编译代码。在<strong>虚幻引擎编辑器</strong>中，单击顶部工具栏上的<strong>Compile</strong>按钮：
+<img src="https://i.loli.net/2021/05/23/6YZzy5m9q7iXlAh.png" alt=""></p> <p>如果代码没有问题，您将在虚幻引擎主编辑器的右下角看到<strong>Compile Complete</strong>的消息。在本教程中，编译代码指的就是这个步骤。</p> <h2 id="第三步-导入真实的航班数据"><a href="#第三步-导入真实的航班数据" class="header-anchor">#</a> 第三步：导入真实的航班数据</h2> <p>接下来，您将使用从旧金山到哥本哈根的真实航班数据。该数据由<a href="https://cesium.com/blog/2020/08/13/flightradar24/" target="_blank" rel="noopener noreferrer">FlightRadar24<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>收集。在<strong>Cesium for Unreal</strong>中的高度，是相对于WGS84椭球的，以米为单位。这里对数据进行了预处理，将高度单位从相对于平均海平面的英尺，换算成了相对于椭球的米。您可以在<a href="https://cesiumjs.s3.amazonaws.com/downloads/SFO_to_CPH_flight_data_WGS84.csv" target="_blank" rel="noopener noreferrer">此处<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>下载转换后的数据。
+<img src="https://i.loli.net/2021/05/23/krygWZS2RlM6OJj.png" alt=""> <em>微软电子表格中的航班数据</em></p> <p>为了使<strong>PlaneTrack</strong>类能访问数据以执行坐标转换，您将使用虚幻引擎的<strong>DataTable</strong>将数据存储在项目中。在此步骤中，您将创建一个数据结构来表示航班数据的结构。</p> <ol><li>在中<strong>PlaneTrack.h</strong>，将以下代码片段插入引入头文件的下方，以定义航班数据的结构：</li></ol> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>USTRUCT(BlueprintType)
+struct FAircraftRawData : public FTableRowBase
+{
+  GENERATED_USTRUCT_BODY()
+
+  public:
+    FAircraftRawData()
+      : Longitude(0.0)
+      , Latitude(0.0)
+      , Height(0.0)
+    {}
+
+  UPROPERTY(EditAnywhere, Category = &quot;FlightTracker&quot;)
+    double Longitude;
+  UPROPERTY(EditAnywhere, Category = &quot;FlightTracker&quot;)
+    double Latitude;
+  UPROPERTY(EditAnywhere, Category = &quot;FlightTracker&quot;)
+    double Height;
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>该结构包含三个成员变量：Longitude，Latitude，和Height。这些变量对应于上面原始数据表中的列名。另外请注意，该结构继承于<strong>FTableRowBase</strong>。
+编译代码。</p> <ol start="2"><li>将.csv数据文件拖放到虚幻引擎<strong>Content Browser</strong>中。在<strong>Choose DataTable Row Type</strong>下拉框中选择<strong>AircraftRawData</strong>：
+<img src="https://i.loli.net/2021/05/23/5VnpJAUhKtPsCic.png" alt=""></li></ol> <p>点击<strong>Apply</strong>，然后<strong>Content Browser</strong>中双击新创建的UDataTable对象，以打开数据表：
+<img src="https://i.loli.net/2021/05/23/l3exdGNLwv8jbDz.png" alt=""></p> <blockquote><p>故障排除：如果您收到了虚幻引擎无法导入的错误消息，请检查数据文件是否保存在项目文件夹中。如果数据文件保存在其他位置，可能会引发此错误。</p></blockquote> <h2 id="第四步-将坐标添加到航班轨迹中"><a href="#第四步-将坐标添加到航班轨迹中" class="header-anchor">#</a> 第四步：将坐标添加到航班轨迹中</h2> <p>在此步骤中，您将向PlaneTrack类添加更多代码，以完成剩下的创建样条线轨迹的功能。</p> <ol><li>将以下头文件引用和方法定义代码添加到<strong>PlaneTrack.h</strong>中：</li></ol> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>// 头文件
+...
+#include &lt;glm/vec3.hpp&gt;
+#include &quot;CesiumGeospatial/Ellipsoid.h&quot;
+#include &quot;CesiumGeospatial/Cartographic.h&quot;
+...
+
+public:
+  // 解析数据表并创建样条线轨迹的方法
+  UFUNCTION(BlueprintCallable, Category = &quot;FlightTracker&quot;)
+    void LoadSplineTrackPoints();
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><ol start="2"><li>在<strong>LoadSplineTrackPoints</strong>的方法体中添加以下代码。这是大部分计算要完成的地方。</li></ol> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>  void APlaneTrack::LoadSplineTrackPoints()
+  {
+    if (this-&gt;AircraftsRawDataTable != nullptr &amp;&amp; this-&gt;CesiumGeoreference != nullptr)
+    {
+      int32 PointIndex = 0;
+      for (auto&amp; row : this-&gt;AircraftsRawDataTable-&gt;GetRowMap())
+      {
+        FAircraftRawData* Point = (FAircraftRawData*)row.Value;
+        // 获取经度/维度/高度值，转换成UE4坐标
+        double PointLatitude = Point-&gt;Latitude;
+        double PointLongitude = Point-&gt;Longitude;
+        double PointHeight = Point-&gt;Height;
+
+        // 计算UE里的坐标
+        glm::dvec3 UECoords = this-&gt;CesiumGeoreference-&gt;TransformLongitudeLatitudeHeightToUe(glm::dvec3(PointLongitude, PointLatitude, PointHeight));
+        FVector SplinePointPosition = FVector(UECoords.x, UECoords.y, UECoords.z);
+        this-&gt;SplineTrack-&gt;AddSplinePointAtIndex(SplinePointPosition, PointIndex, ESplineCoordinateSpace::World, false);
+
+        // 获取飞机的向上方向
+        const CesiumGeospatial::Ellipsoid&amp; Ellipsoid = CesiumGeospatial::Ellipsoid::WGS84;
+        glm::dvec3 upVector = Ellipsoid.geodeticSurfaceNormal(CesiumGeospatial::Cartographic(FMath::DegreesToRadians(PointLongitude), FMath::DegreesToRadians(PointLatitude), FMath::DegreesToRadians(PointHeight)));
+
+        // 计算飞机的UE4向上方向
+        glm::dvec4 ecefUp(upVector, 0.0);
+        const glm::dmat4&amp; ecefToUnreal = this-&gt;CesiumGeoreference-&gt;GetEllipsoidCenteredToUnrealWorldTransform();
+        glm::dvec4 unrealUp = ecefToUnreal * ecefUp;
+        this-&gt;SplineTrack-&gt;SetUpVectorAtSplinePoint(PointIndex, FVector(unrealUp.x, unrealUp.y, unrealUp.z), ESplineCoordinateSpace::World, false);
+
+        PointIndex++;
+      }
+      this-&gt;SplineTrack-&gt;UpdateSpline();
+    }
+  }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><p>编译代码。</p> <ol start="3"><li>回到虚幻引擎编辑器，将航班轨迹添加到场景中。在<strong>Place Actors</strong>面板中，搜索<strong>Plane Track</strong>，将其拖放到场景中。</li> <li>选中<strong>PlaneTrack</strong> Actor，然后在<strong>Details</strong>面板中，找到<strong>Flight Tracker</strong>类别。将<strong>Cesium Georeference</strong>属性设置为场景中的<strong>Cesium Georeference</strong>，并将<strong>Aircrafts Raw Data Table</strong>属性设置为在步骤三中添加的数据表。
+<img src="https://i.loli.net/2021/05/23/KpxVHXNiR5Ejmkd.png" alt=""></li> <li>打开关卡编辑。在这里，您将添加一些<strong>蓝图</strong>节点以填充样条曲线轨迹。
+<img src="https://i.loli.net/2021/05/23/CtmHoJyNiavkZBc.png" alt=""></li> <li>查找<strong>Event BeginPlay</strong>节点。在运行模式的最开始，这个节点就会被调用。从<strong>World Outliner</strong>拖拽<strong>PlaneTrack</strong> Actor到<strong>Event Graph</strong>中，从这个节点拉出一根连线，搜索并添加<strong>Clear Spline Points</strong>节点。首次将样条线添加到场景时，默认情况下它有两个点。这两个点是随机的，在本教程中不需要，因此可以使用<strong>Clear Spline Points</strong>清除它们。</li> <li>从<strong>PlaneTrack</strong>对象节点，拖动另一跟连线并搜索<strong>Load Spline Track Points</strong>节点。连接<strong>Clear Spline Points</strong>和<strong>Load Spline Track Points</strong>节点，并将<strong>Event BeginPlay</strong>节点连接到<strong>Clear Spline Points</strong>节点。最终的<strong>蓝图</strong>拓扑如下所示：
+<img src="https://i.loli.net/2021/05/23/p8wOFcho6t59NRz.png" alt="">
+单击<strong>蓝图编辑器</strong>左上角的<strong>Compile</strong>按钮。默认情况下样条线在运行时处于不可见状态，您可以通过点击编辑器主窗口，按键盘上的`键（通常在Esc键下面），输入命令：<strong>ShowFlag.Splines 1</strong>。要检查所有设置是否正确，请点击主编辑器顶部面板中的<strong>Play</strong>按钮。您应该能够看到由样条曲线连接的数据点，该样条曲线从旧金山国际机场的航站楼开始，如下所示：
+<img src="https://i.loli.net/2021/05/23/YPMFVylKHQkBzow.png" alt=""></li></ol> <blockquote><p>译者注：也可以<strong>Event BeginPlay</strong>节点后添加<strong>Execute Console Command</strong>节点，<strong>Command</strong>输入<strong>ShowFlag.Splines 1</strong>：
+<img src="https://i.loli.net/2021/05/23/lQSwbBi51F2YCrc.jpg" alt=""></p></blockquote> <h2 id="第五步-添加飞机"><a href="#第五步-添加飞机" class="header-anchor">#</a> 第五步：添加飞机</h2> <p>完成航班轨迹的最后一步是添加跟随样条线轨迹的飞机。对于飞机网格体，可以使用任何您想要的模型。这是TurboSquid的<a href="https://www.turbosquid.com/3d-models/free-boeing-787-8-1-3d-model/858876" target="_blank" rel="noopener noreferrer">波音787<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>飞机模型，您可以免费下载。</p> <p>本教程中的飞机模型是<a href="https://sketchfab.com/3d-models/boeing-737-max-3d-model-a9ad26216b754c3396b90745af615a72" target="_blank" rel="noopener noreferrer">Sketchfab<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>的波音737飞机模型。</p> <blockquote><p>译者注：翻译此教程时，该模型已经从Sketchfab下架了，您可以在Sketchfab搜索<a href="https://sketchfab.com/3d-models/boeing737-259de41be0c7410e86b7e79be33d6b3a" target="_blank" rel="noopener noreferrer">其他的波音787飞机模型<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。另外，可以使用<a href="https://github.com/sketchfab/unreal-plugin" target="_blank" rel="noopener noreferrer">Sketchfab plugin for Unreal Engine<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>一键导入Sketchfab模型，省去下载fbx模型，再导入UE的麻烦。
+<img src="https://i.loli.net/2021/05/23/oHcbakdUCElxRLJ.jpg" alt=""></p></blockquote> <ol><li><p>在内容浏览器中点击右键，再点击<strong>Add/Import —&gt; Import to /Game/[Path]/<strong>将飞机模型导入到内容浏览器中。您可以在</strong>Static Mesh Editor</strong>中检查模型：
+<img src="https://i.loli.net/2021/05/23/qguaY1PwNsHB86Q.png" alt=""></p></li> <li><p>右键单击<strong>Content Browser</strong>的空白区域，然后选择<strong>Blueprint Class</strong>。当提示您选择父类时，选择<strong>Actor</strong>。将类命名为<strong>BP_Aircraft</strong>（BP代表Blueprint蓝图）。该类将包含使飞机沿着样条线轨迹移动的逻辑。</p></li> <li><p>双击新创建的<strong>BP_Aircraft</strong>蓝图，打开蓝图编辑器。单击左上角绿色的<strong>Add Component</strong>按钮，然后搜索<strong>Static Mesh</strong>。将其添加到组件列表中，并将其命名为<strong>AircraftMesh</strong>。
+<img src="https://i.loli.net/2021/05/23/FWH1p47sDygULQ3.png" alt=""></p></li> <li><p>选中此新组件后，在蓝图编辑器右侧找到<strong>Details</strong>面板。找到<strong>Static Mesh</strong>属性，然后在下拉菜单中找到并选择您先前导入的飞机网格体。</p></li> <li><p>单击蓝图编辑器顶部的<strong>Event Graph</strong>选项卡，打开<strong>Event Graph</strong>。单击右键<strong>Event Graph</strong>中的任意位置，然后搜索<strong>Custom Event</strong>节点。将此自定义事件命名为<strong>MoveAircraft</strong>。</p></li> <li><p>在<strong>Event Graph</strong>中再次单击右键，然后搜索<strong>Add Timeline</strong>节点。<strong>Timeline</strong>节点将用于随着时间移动飞机。
+<img src="https://i.loli.net/2021/05/23/OTBUyIqbv8S3Zwx.png" alt=""></p></li> <li><p>双击<strong>Timeline</strong>节点以打开<strong>Timeline Editor</strong>。通过单击编辑器左上角的<strong>Add Float Track</strong>按钮来创建浮点数曲线，并为其命名。在本教程中，浮点数曲线被命名为<strong>Alpha</strong>。右键单击曲线，选择<strong>Add key to Curve</strong>，给时间轴添加关键帧。最终曲线如下图所示：
+<img src="https://i.loli.net/2021/05/23/4PGHbWRwp1izVal.png" alt=""></p></li></ol> <p>第一个关键帧时间= 0，值= 0，而第二个关键帧时间= 1，值=1。要为关键点分配更精确的值，请选中它并在左上角输入值：
+<img src="https://i.loli.net/2021/05/23/Gb4x31IcLRYfUBH.png" alt=""></p> <p>选中<strong>Use Last Keyframe</strong>旁边的复选框。如果您希望动画在结束后立即循环播放，也可以勾选<strong>Loop</strong>复选框。</p> <p>回到<strong>Event Graph</strong>，右键单击时间轴节点的<strong>Alpha</strong>输出引脚，选择<strong>Promote to variable</strong>菜单，将其提升为变量。这将在左侧面板的<strong>Components</strong>中添加一个新变量：
+<img src="https://i.loli.net/2021/05/23/tsXDrQ8iW7GeCUY.png" alt=""></p> <ol start="8"><li>点击<strong>My Blueprint</strong>面板中绿色的<strong>Add New</strong>按钮，给<strong>BP_Aircraft</strong>蓝图添加一个名为<strong>Duration</strong>的变量。该变量用于确定飞机沿轨迹飞行需要多长时间。将他的类型设置为浮点数<strong>float</strong>，然后单击它旁边的眼睛符号，以使其公开，并在虚幻引擎主编辑器中进行编辑。</li></ol> <p>同样，将下列变量添加到<strong>BP_Aircraft</strong>蓝图类中：</p> <ul><li>AircraftStartOffset：类型float；可见性为public；用于确定航班在时间轴上的何处开始。由于时间线的<strong>Alpha</strong>值在0和1之间，<strong>Slider Range</strong>和<strong>Value Range</strong>应该设置在0和1之间。可以在蓝图编辑器的细节面板中给这些变量重新赋值。</li> <li>PlaneTrack：类型为PlaneTrack的引用; 可见性为public；用于保存PlaneTrack对象的引用，从样条线上获取位置。
+<img src="https://i.loli.net/2021/05/23/eQ6lqVuk1PrFN5X.png" alt=""></li></ul> <p>最终的组件列表如下所示：
+<img src="https://i.loli.net/2021/05/23/cuvjyzRwFxtglqI.png" alt=""></p> <ol start="9"><li>按下图完成<strong>Move Aircraft</strong>自定义事件：
+<img src="https://i.loli.net/2021/05/23/3w4GoXed617aJPD.png" alt=""></li></ol> <p>要使用变量，可以将它拖放到<strong>Event Graph</strong>中，或右键单击图中的任何位置，然后搜索变量的名称。要调用变量的函数，可以从变量节点拉出新连接，然后搜索该函数的名称。</p> <p>编译蓝图。</p> <ol start="10"><li><p>接下来，添加逻辑以将<strong>PlaneTrack</strong>样条线连接到<strong>Move Aircraft</strong>方法，并使用线性插值的方法从该样条线获取飞机的位置。还是在当前<strong>Event Graph</strong>中，在<strong>Move Aircraft</strong>下创建如下节点拓扑图：
+<img src="https://i.loli.net/2021/05/23/f4HwEIgkG96p5ZL.png" alt=""></p></li> <li><p>最后，用<strong>Set Actor Transform</strong>将两个<strong>蓝图</strong>拓扑连接在一起：
+<img src="https://i.loli.net/2021/05/23/W9a7dHkqFx2j1vy.png" alt=""></p></li></ol> <p>编译蓝图。</p> <ol start="12"><li><p>回到主编辑器。要么从<strong>Content Browser</strong>中拖拽<strong>BP_Aircraft</strong>蓝图到场景中，要么在<strong>Place Actor</strong>面板中搜索<strong>BP_Aircraft</strong>并将<strong>BP_Aircraft</strong>蓝图添加到场景中。</p></li> <li><p>有几种触发<strong>Move Aircraft</strong>事件的方法。在本教程中，我们使用键盘事件来触发它。返回到<strong>Level Blueprint.</strong>。在<strong>Event Graph</strong>中，添加<strong>Keyboard</strong>节点（此处使用M键）。将此键盘节点连接到<strong>Move Aircraft</strong>事件，如下图所示：
+<img src="https://i.loli.net/2021/05/23/7KSRDE2hoIQwtOe.png" alt=""></p></li></ol> <p>编译蓝图。</p> <ol start="14"><li>选中<strong>BP_Aircraft</strong> Actor，在<strong>Details</strong>面板中初始化公共变量<strong>Duration</strong>，<strong>PlaneTrack</strong>和<strong>AirplaneOffset</strong>。请注意，<strong>Duration</strong>的值越大，飞机沿轨迹飞行的时间就越长。最好是将<strong>Duration</strong>值设置为100,000。可以修改<strong>AirplaneOffset</strong>变量，让飞机在轨迹的某个中间位置开始飞行。比如，0.0是航班的起始位置，1.0是航班的终点，因此将<strong>AirplaneOffset</strong>设置为0.9的话，可以让飞机从靠近终点的位置开始飞行。
+<img src="https://i.loli.net/2021/05/23/hGXATnJCEZ3HU9B.png" alt=""></li></ol> <p>将当前视口对准飞机，点击<strong>Play</strong>按钮，然后按M键（或者任意您选择的按键）开始飞行。
+<img src="https://i.loli.net/2021/05/23/jIov8Bs57PKkgfZ.gif" alt=""></p> <blockquote><p>译者注：其实此时运行工程的话，镜头不会跟着飞机一起移动，必须手动操作FloatingPawn，要不然飞机一会儿就没影了。挑战一下自己，看看能不能跟上飞机的节奏。</p></blockquote> <h2 id="在不同的镜头视角之间切换-可选"><a href="#在不同的镜头视角之间切换-可选" class="header-anchor">#</a> 在不同的镜头视角之间切换（可选）</h2> <p>您将实现镜头切换功能，以便从不同的角度观察飞行情况。这一步是可选的，但是可以为您的项目添加很棒的效果。</p> <ol><li>使用<strong>Place Actor</strong>面板，将两个新的<strong>Camera</strong> Actor添加到场景中。在右侧的面板中，将<strong>Camera</strong> Actor拖放到<strong>BP_Aircraft</strong> Actor上，让<strong>Camera</strong>成为<strong>BP_Aircraft</strong>的孩子节点：
+<img src="https://i.loli.net/2021/05/23/fy9DQbVvdTGZKq2.png" alt=""></li></ol> <p>当飞机移动时，镜头也将随之移动。调整镜头，使其中一个对准飞机顶部，另外一个从侧面看：
+<img src="https://i.loli.net/2021/05/23/sEeKkJbZjCocBTd.png" alt=""> <img src="https://i.loli.net/2021/05/23/ux5zRCtNQXGpMyi.png" alt=""></p> <ol start="2"><li>定位好镜头后，打开关卡蓝图。为侧面和顶部镜头添加自定义键盘事件：
+<img src="https://i.loli.net/2021/05/23/zRfZrHlhBmupC81.png" alt=""></li></ol> <p>编译蓝图，然后返回主编辑器，点击<strong>Play</strong>，您可以用在<strong>关卡蓝图</strong>中指定的键盘按键来测试新的镜头切换功能。</p> <h2 id="完整源码"><a href="#完整源码" class="header-anchor">#</a> 完整源码</h2> <p>这是本教程的完整源代码：</p> <p><strong>PlaneTrack.h</strong>：</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>// Copyright 2020-2021 CesiumGS, Inc. and Contributors
+
+#pragma once
+
+#include &quot;CoreMinimal.h&quot;
+#include &quot;GameFramework/Actor.h&quot;
+#include &quot;Components/SplineComponent.h&quot;
+#include &quot;CesiumGeoreference.h&quot;
+#include &quot;Engine/DataTable.h&quot;
+#include &lt;glm/vec3.hpp&gt;
+#include &quot;CesiumGeospatial/Ellipsoid.h&quot;
+#include &quot;CesiumGeospatial/Cartographic.h&quot;
+#include &quot;PlaneTrack.generated.h&quot;
+
+USTRUCT(BlueprintType)
+struct FAircraftRawData : public FTableRowBase
+{
+  GENERATED_USTRUCT_BODY()
+
+public:
+  FAircraftRawData()
+    : Longitude(0.0)
+    , Latitude(0.0)
+    , Height(0.0)
+  {}
+
+  UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = &quot;FlightTracker&quot;)
+    float Longitude;
+  UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = &quot;FlightTracker&quot;)
+    float Latitude;
+  UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = &quot;FlightTracker&quot;)
+    float Height;
+};
+
+UCLASS()
+class CESIUMUNREAL_API APlaneTrack : public AActor
+{
+  GENERATED_BODY()
+  
+public:  
+  // 设置默认值
+  APlaneTrack();
+
+  // 代表航班轨迹的样条线成员变量
+  UPROPERTY(BlueprintReadOnly, Category = &quot;FlightTracker&quot;)
+    USplineComponent* SplineTrack;
+
+  // Cesium工具类，包含很多有用的坐标转换相关的函数
+  UPROPERTY(EditAnywhere, Category = &quot;FlightTracker&quot;)
+    ACesiumGeoreference* CesiumGeoreference;
+
+  // 用于保存航班数据的虚幻引擎数据表
+  UPROPERTY(EditAnywhere, Category = &quot;FlightTracker&quot;)
+    UDataTable* AircraftsRawDataTable;
+
+protected:
+  // 游戏开始时或者此Actor被创建时执行
+  virtual void BeginPlay() override;
+
+public:  
+  // 每帧执行
+  virtual void Tick(float DeltaTime) override;
+
+  // 解析数据表并创建样条线轨迹的方法
+  UFUNCTION(BlueprintCallable, Category = &quot;FlightTracker&quot;)
+    void LoadSplineTrackPoints();
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br></div></div><p><strong>PlaneTrack.cpp</strong>：</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>// Copyright 2020-2021 CesiumGS, Inc. and Contributors
+
+#include &quot;PlaneTrack.h&quot;
+
+// 设置默认值
+APlaneTrack::APlaneTrack()
+{
+  // 让该Actor每帧都执行Tick()方法，如果需要可以设置成false以提高性能
+  PrimaryActorTick.bCanEverTick = true;
+
+  // 初始化轨迹
+  SplineTrack = CreateDefaultSubobject&lt;USplineComponent&gt;(TEXT(&quot;SplineTrack&quot;));
+  // 让样条线在运行模式下可见
+  SplineTrack-&gt;SetDrawDebug(true);
+  // 设置样条线的颜色
+  SplineTrack-&gt;SetUnselectedSplineSegmentColor(FLinearColor(1.f, 0.f, 0.f));
+  // 设置样条线的粗细或者宽度
+  SplineTrack-&gt;ScaleVisualizationWidth = 70.f;
+}
+
+// 游戏开始时或者此Actor被创建时执行
+void APlaneTrack::BeginPlay()
+{
+  Super::BeginPlay();
+}
+
+// 每帧执行
+void APlaneTrack::Tick(float DeltaTime)
+{
+  Super::Tick(DeltaTime);
+}
+
+void APlaneTrack::LoadSplineTrackPoints()
+{
+  if (this-&gt;AircraftsRawDataTable != nullptr &amp;&amp; this-&gt;CesiumGeoreference != nullptr)
+  {
+    int32 PointIndex = 0;
+    for (auto&amp; row : this-&gt;AircraftsRawDataTable-&gt;GetRowMap())
+    {
+      FAircraftRawData* Point = (FAircraftRawData*)row.Value;
+      // 获取经度/维度/高度值，转换成UE4坐标
+      float PointLatitude = Point-&gt;Latitude;
+      float PointLongitude = Point-&gt;Longitude;
+      float PointHeight = Point-&gt;Height;
+
+      // 计算UE里的坐标
+      glm::dvec3 UECoords = this-&gt;CesiumGeoreference-&gt;TransformLongitudeLatitudeHeightToUe(glm::dvec3(PointLongitude, PointLatitude, PointHeight));
+      FVector SplinePointPosition = FVector(UECoords.x, UECoords.y, UECoords.z);
+      this-&gt;SplineTrack-&gt;AddSplinePointAtIndex(SplinePointPosition, PointIndex, ESplineCoordinateSpace::World, false);
+
+      // 获取飞机的向上方向
+      const CesiumGeospatial::Ellipsoid&amp; Ellipsoid = CesiumGeospatial::Ellipsoid::WGS84;
+      glm::dvec3 upVector = Ellipsoid.geodeticSurfaceNormal(CesiumGeospatial::Cartographic(FMath::DegreesToRadians(PointLongitude), FMath::DegreesToRadians(PointLatitude), FMath::DegreesToRadians(PointHeight)));
+      // 计算飞机的UE4向上方向
+      glm::dvec4 ecefUp(
+        upVector,
+        0.0
+      );
+      const glm::dmat4&amp; ecefToUnreal = this-&gt;CesiumGeoreference-&gt;GetEllipsoidCenteredToUnrealWorldTransform();
+      glm::dvec4 unrealUp = ecefToUnreal * ecefUp;
+      this-&gt;SplineTrack-&gt;SetUpVectorAtSplinePoint(PointIndex, FVector(unrealUp.x, unrealUp.y, unrealUp.z), ESplineCoordinateSpace::World, false);
+
+      PointIndex++;
+    }
+    this-&gt;SplineTrack-&gt;UpdateSpline();
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br></div></div><h2 id="下一步"><a href="#下一步" class="header-anchor">#</a> 下一步</h2> <p>当前，飞机的速度在整个轨迹上都是固定的。如果您的数据集包含速度或加速度，则可以使用它来根据飞机在样条线轨迹上的位置调整飞机的速度。同时，您也可以使用实际数据调整飞机的航向、偏航角和俯仰角。</p> <p>现在，您已经完成了<strong>Cesium for Unreal</strong>系列教程，请访问<a href="https://community.cesium.com/c/cesium-for-unreal" target="_blank" rel="noopener noreferrer">社区论坛<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，以分享您对<strong>Cesium for Unreal</strong>和教程的反馈，并向全世界展示您的作品。</p> <p>都看到这里了，加个技术交流群一起组队研究呗^^</p> <p><img src="https://i.loli.net/2021/05/09/HzUyekM3QNoblKv.png" alt=""></p></div> <footer class="page-edit" style="display:none;"><div class="edit-link"><a href="https://github.com/3D-for-Fun/3D-for-Fun.github.io/edit/gh-pages-source/docs/views/Blog/cesium/cesium-flight-tracker.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-a008c6ba data-v-a008c6ba><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-a008c6ba><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-a008c6ba></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-a008c6ba></path></svg></div><!----></div></div>
+    <script src="/assets/js/app.20a62c5e.js" defer></script><script src="/assets/js/4.03d0c1ba.js" defer></script><script src="/assets/js/1.552e0a87.js" defer></script><script src="/assets/js/89.4a272ce6.js" defer></script>
+  </body>
+</html>

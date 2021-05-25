@@ -129,7 +129,7 @@ categories:
     ![](https://i.loli.net/2021/05/20/MmVU2vN4Eh79lT6.jpg)
 
 ## 下一步
-继续阅读**使用Cesium for Unreal创建飞行轨迹**教程。
+继续阅读[使用Cesium for Unreal构建航班轨迹](./cesium-flight-tracker.html)教程。
 
 都看到这里了，加个技术交流群一起组队研究呗^^
 
