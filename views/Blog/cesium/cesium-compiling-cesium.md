@@ -28,7 +28,7 @@ categories:
 ![](https://i.loli.net/2021/05/28/l6hZPUrg9nsGBXC.png)
 *取消初学者内容包*
 
-打开项目所在的目录，在项目根目录创建Plugins目录，打开命令行，进入Plugins目录（虽然不区分大小写，但是其他目录比如Content都都是首字母大写，所以保持一致吧），执行如下命令拉取Cesium for Unreal插件源码：
+打开项目所在的目录，在项目根目录创建Plugins目录，打开命令行，进入Plugins目录（虽然不区分大小写，但是其他目录比如Content都是首字母大写，所以保持一致吧），执行如下命令拉取Cesium for Unreal插件源码：
 ```
 git clone --recursive https://github.com/CesiumGS/cesium-unreal.git
 ```
@@ -36,7 +36,7 @@ git clone --recursive https://github.com/CesiumGS/cesium-unreal.git
 最终目录结构是这样子的：
 ![](https://i.loli.net/2021/05/28/JuIbnm5f2Wqp4lh.png)
 
-由于种种原因，国内访问Github可能会很慢，或者更不无法访问，或者克隆到一半挂掉，可以在github.com后面添加.cnpmjs.org。github.com.cnpmjs.org同步了github的代码，国内速度杠杠的：
+由于种种原因，国内访问Github可能会很慢，或者根本无法访问，或者克隆到一半挂掉，可以在github.com后面添加.cnpmjs.org。github.com.cnpmjs.org同步了github的代码，国内速度杠杠的：
 ```
 git clone --recursive https://github.com.cnpmjs.org/CesiumGS/cesium-unreal.git
 ```
